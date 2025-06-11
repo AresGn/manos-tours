@@ -1,0 +1,380 @@
+/* Corrections spécifiques pour Manos Tours */
+
+/* Supprimer les rectangles de sélection sur tous les éléments interactifs */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Permettre la sélection de texte pour les éléments de contenu */
+p, span, div, h1, h2, h3, h4, h5, h6 {
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* Supprimer les outlines par défaut et ajouter des focus states personnalisés */
+a, button, input, textarea, select {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus, button:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Supprimer les rectangles de sélection spécifiquement pour les liens du footer */
+footer a {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+footer a:focus {
+  outline: none;
+  text-decoration: underline;
+  text-decoration-color: #3b82f6;
+  text-underline-offset: 4px;
+}
+
+/* Assurer que Tailwind prend la priorité sur les styles personnalisés */
+.navbar-desktop {
+  display: flex !important;
+}
+
+@media (max-width: 767px) {
+  .navbar-desktop {
+    display: none !important;
+  }
+}
+
+/* Corrections pour la navbar */
+.navbar-container {
+  position: relative;
+  z-index: 1000;
+}
+
+.navbar-dropdown {
+  position: absolute;
+  z-index: 1001;
+}
+
+/* Corrections pour le footer */
+.footer-social-icons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .footer-social-icons {
+    justify-content: flex-start;
+  }
+}
+
+/* Assurer la visibilité des éléments */
+.hidden-mobile {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .hidden-mobile {
+    display: none;
+  }
+}
+
+.hidden-desktop {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .hidden-desktop {
+    display: block;
+  }
+}
+
+/* Corrections pour les transitions */
+.smooth-transition {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Corrections pour les dropdowns */
+.dropdown-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.dropdown-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 200ms, transform 200ms;
+}
+
+.dropdown-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 200ms, transform 200ms;
+}
+
+/* Assurer que les classes Tailwind fonctionnent */
+.md\:flex {
+  display: flex !important;
+}
+
+@media (max-width: 767px) {
+  .md\:flex {
+    display: none !important;
+  }
+}
+
+.md\:hidden {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  .md\:hidden {
+    display: block !important;
+  }
+}
+
+/* Corrections pour les icônes sociales */
+.social-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Corrections pour le responsive */
+@media (min-width: 768px) {
+  .navbar-menu {
+    display: flex !important;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}
+
+/* Corrections pour les z-index */
+.navbar-fixed {
+  z-index: 50;
+}
+
+.dropdown-menu {
+  z-index: 51;
+}
+
+/* Assurer la cohérence des couleurs */
+.text-primary {
+  color: #1d4ed8;
+}
+
+.text-primary-hover:hover {
+  color: #1d4ed8;
+}
+
+.bg-primary {
+  background-color: #1d4ed8;
+}
+
+.bg-primary-hover:hover {
+  background-color: #1d4ed8;
+}
+
+/* Corrections pour les bordures */
+.border-primary {
+  border-color: #1d4ed8;
+}
+
+/* Corrections pour les ombres */
+.shadow-custom {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-custom-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Amélioration de la navbar avec la même couleur que le footer */
+.navbar-fixed {
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(31, 41, 55, 0.95) 100%) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(75, 85, 99, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Styles pour les liens de la navbar */
+.navbar-link {
+  color: #f9fafb !important;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.navbar-link:hover {
+  color: #60a5fa !important;
+  transform: translateY(-1px);
+}
+
+/* Style pour le logo de la navbar */
+.navbar-logo {
+  filter: brightness(1.1) contrast(1.1);
+  transition: all 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2) contrast(1.2);
+}
+
+/* Style pour le bouton hamburger */
+.navbar-hamburger {
+  color: #f9fafb !important;
+}
+
+.navbar-hamburger:hover {
+  background: rgba(75, 85, 99, 0.3);
+  color: #60a5fa !important;
+}
+
+/* Style pour les dropdowns de la navbar */
+.navbar-dropdown {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(229, 231, 235, 0.8);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-dropdown-link {
+  color: #374151 !important;
+}
+
+.navbar-dropdown-link:hover {
+  background: rgba(59, 130, 246, 0.1);
+  color: #1d4ed8 !important;
+}
+
+/* Amélioration du footer */
+.footer-professional {
+  background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+}
+
+/* Amélioration des icônes sociales */
+.social-icon-container {
+  background: rgba(55, 65, 81, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(75, 85, 99, 0.3);
+}
+
+.social-icon-container:hover {
+  background: rgba(59, 130, 246, 0.9);
+  border-color: rgba(59, 130, 246, 0.5);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+}
+
+/* Amélioration de la typographie du footer */
+.footer-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.footer-link {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #d1d5db;
+  transition: all 0.2s ease-in-out;
+}
+
+.footer-link:hover {
+  color: #60a5fa;
+  transform: translateX(4px);
+}
+
+/* Amélioration du contraste */
+.footer-text {
+  color: #e5e7eb;
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+.footer-contact-icon {
+  color: #60a5fa;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Forcer l'affichage en 4 colonnes sur desktop */
+@media (min-width: 1024px) {
+  .footer-4-columns {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 3rem !important;
+  }
+}
+
+/* Responsive amélioré pour le footer */
+@media (max-width: 1023px) {
+  .footer-4-columns {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-4-columns {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+    text-align: center !important;
+  }
+
+  .footer-heading {
+    font-size: 1.125rem;
+  }
+
+  .footer-link {
+    font-size: 1rem;
+  }
+}
+
+/* Assurer que les colonnes sont bien alignées */
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media (max-width: 1023px) {
+  .footer-column {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-column {
+    align-items: flex-start;
+    text-align: left;
+  }
+}

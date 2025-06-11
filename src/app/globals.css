@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+/* Import des styles personnalisés Manos Tours */
+@import "../styles/variables.css";
+@import "../styles/layout.css";
+@import "../styles/components.css";
+@import "../styles/animations.css";
+@import "../styles/fixes.css";
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -22,5 +29,42 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-primary);
+  line-height: 1.6;
+}
+
+/* Styles de base pour Manos Tours */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Amélioration de l'accessibilité */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Styles pour les images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Styles pour les liens */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-dark);
 }

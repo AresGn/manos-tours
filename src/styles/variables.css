@@ -1,0 +1,112 @@
+/* Variables CSS pour Manos Tours */
+/* Basé sur la palette de couleurs définie dans le plan d'analyse */
+
+:root {
+  /* Couleurs principales - Palette "Grand-Popo Authentique" */
+  --color-primary: #0077BE;        /* Bleu océan - Confiance, professionnalisme */
+  --color-primary-light: #4A9FD9;
+  --color-primary-dark: #005A8B;
+  
+  --color-secondary: #F4A460;      /* Sable doré - Chaleur, accueil */
+  --color-secondary-light: #F7B87A;
+  --color-secondary-dark: #E6934A;
+  
+  --color-accent: #228B22;         /* Vert mangrove - Nature, écotourisme */
+  --color-accent-light: #4CAF50;
+  --color-accent-dark: #1B6B1B;
+  
+  --color-neutral: #CD853F;        /* Terre rouge béninoise - Authenticité */
+  --color-neutral-light: #D4A574;
+  --color-neutral-dark: #B8722E;
+  
+  /* Couleurs système */
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-gray-50: #F9FAFB;
+  --color-gray-100: #F3F4F6;
+  --color-gray-200: #E5E7EB;
+  --color-gray-300: #D1D5DB;
+  --color-gray-400: #9CA3AF;
+  --color-gray-500: #6B7280;
+  --color-gray-600: #4B5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1F2937;
+  --color-gray-900: #111827;
+  
+  /* Couleurs d'état */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+  
+  /* Typographie */
+  --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-heading: 'Playfair Display', Georgia, serif;
+  --font-family-script: 'Dancing Script', cursive;
+  
+  /* Tailles de police */
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 1.875rem;  /* 30px */
+  --font-size-4xl: 2.25rem;   /* 36px */
+  --font-size-5xl: 3rem;      /* 48px */
+  --font-size-6xl: 3.75rem;   /* 60px */
+  
+  /* Espacements */
+  --spacing-xs: 0.25rem;   /* 4px */
+  --spacing-sm: 0.5rem;    /* 8px */
+  --spacing-md: 1rem;      /* 16px */
+  --spacing-lg: 1.5rem;    /* 24px */
+  --spacing-xl: 2rem;      /* 32px */
+  --spacing-2xl: 3rem;     /* 48px */
+  --spacing-3xl: 4rem;     /* 64px */
+  --spacing-4xl: 6rem;     /* 96px */
+  
+  /* Rayons de bordure */
+  --border-radius-sm: 0.25rem;  /* 4px */
+  --border-radius-md: 0.5rem;   /* 8px */
+  --border-radius-lg: 0.75rem;  /* 12px */
+  --border-radius-xl: 1rem;     /* 16px */
+  --border-radius-full: 9999px;
+  
+  /* Ombres */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 300ms ease-in-out;
+  --transition-slow: 500ms ease-in-out;
+  
+  /* Z-index */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-toast: 1080;
+}
+
+/* Mode sombre (optionnel pour le futur) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-gray-50: #1F2937;
+    --color-gray-100: #374151;
+    --color-gray-200: #4B5563;
+    --color-gray-300: #6B7280;
+    --color-gray-400: #9CA3AF;
+    --color-gray-500: #D1D5DB;
+    --color-gray-600: #E5E7EB;
+    --color-gray-700: #F3F4F6;
+    --color-gray-800: #F9FAFB;
+    --color-gray-900: #FFFFFF;
+  }
+}
