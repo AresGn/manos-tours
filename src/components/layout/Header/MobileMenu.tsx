@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import LanguageSelector from "@/components/ui/LanguageSelector";
 
 interface MenuItem {
   label: string;
@@ -43,13 +42,7 @@ export default function MobileMenu({ isOpen, onClose, menu }: MobileMenuProps) {
       <div className="mobile-menu-container fixed top-16 left-0 right-0 footer-professional z-50 md:hidden max-h-[calc(100vh-4rem)] overflow-y-auto">
         <div className="px-6 py-8">
           
-          {/* Sélecteur de langue en haut */}
-          <div className="mb-8 pb-6 border-b-2 border-gray-600">
-            <h3 className="text-sm font-bold text-gray-300 uppercase tracking-wide mb-4">
-              Langue / Language
-            </h3>
-            <LanguageSelector className="w-full mobile-dark" />
-          </div>
+
 
           {/* Menu de navigation */}
           <nav className="space-y-2">
