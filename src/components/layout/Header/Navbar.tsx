@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import LanguageSelector from "@/components/ui/LanguageSelector";
+import MobileMenu from "./MobileMenu";
 
 const menu = [
   { label: "Accueil", href: "/" },
@@ -50,7 +52,7 @@ export default function Navbar() {
 
   return (
     <nav className="w-full bg-white/95 backdrop-blur-md border-b border-gray-300 shadow-lg fixed top-0 left-0 z-50 navbar-fixed">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between h-16 navbar-container">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between h-16 navbar-container gap-4">
         <Link href="/" className="flex items-center gap-3 font-bold text-xl text-white tracking-tight">
           <Image
             src="/images/logo.jpeg"
@@ -99,42 +101,35 @@ export default function Navbar() {
             )
           )}
         </div>
-        {/* Burger menu */}
-        <button
-          className="md:hidden flex items-center p-2 rounded-lg navbar-hamburger transition-colors duration-200 hidden-desktop"
-          onClick={() => setMobileOpen((v) => !v)}
-          aria-label="Ouvrir le menu"
-          aria-expanded={mobileOpen}
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" d={mobileOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
-          </svg>
-        </button>
+
+        {/* Conteneur pour les éléments de droite */}
+        <div className="flex items-center gap-4">
+          {/* Sélecteur de langue */}
+          <div className="hidden md:block navbar-language-selector">
+            <LanguageSelector
+              className="language-selector-visible language-selector-desktop"
+            />
+          </div>
+
+          {/* Burger menu */}
+          <button
+            className="hamburger-button md:hidden flex items-center p-3 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 transition-all duration-200"
+            onClick={() => setMobileOpen((v) => !v)}
+            aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-expanded={mobileOpen}
+          >
+            <svg className="hamburger-icon w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d={mobileOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+            </svg>
+          </button>
+        </div>
       </div>
       {/* Menu mobile */}
-      {mobileOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200 shadow-lg px-4 py-6 space-y-3 animate-in slide-in-from-top duration-200">
-          {menu.map((item) =>
-            item.children ? (
-              <div key={item.label}>
-                <button className="w-full text-left font-medium text-gray-800 flex items-center justify-between py-2" onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}>
-                  {item.label}
-                  <svg className={`w-4 h-4 ml-1 transition-transform ${openDropdown === item.label ? "rotate-180" : ""}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
-                </button>
-                {openDropdown === item.label && (
-                  <div className="pl-4 border-l border-blue-100 space-y-1">
-                    {item.children.map((child) => (
-                      <Link key={child.label} href={child.href} className="block py-1 text-gray-700 hover:text-blue-700">{child.label}</Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ) : (
-              <Link key={item.label} href={item.href} className="block font-medium text-gray-800 py-2 hover:text-blue-700">{item.label}</Link>
-            )
-          )}
-        </div>
-      )}
+      <MobileMenu
+        isOpen={mobileOpen}
+        onClose={() => setMobileOpen(false)}
+        menu={menu}
+      />
     </nav>
   );
 } 

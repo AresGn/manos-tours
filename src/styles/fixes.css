@@ -378,3 +378,249 @@ footer a:focus {
     text-align: left;
   }
 }
+
+/* Styles pour le sélecteur de langue */
+.language-selector {
+  position: relative;
+  z-index: 100;
+}
+
+.language-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.language-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.language-button:focus {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+}
+
+.language-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(229, 231, 235, 0.8);
+  min-width: 140px;
+  padding: 0.5rem 0;
+  z-index: 101;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.language-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: #374151;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: none;
+  text-align: left;
+}
+
+.language-option:hover {
+  background: rgba(59, 130, 246, 0.1);
+  color: #1d4ed8;
+  transform: translateX(2px);
+}
+
+.language-option:focus {
+  background: rgba(59, 130, 246, 0.1);
+  color: #1d4ed8;
+  outline: none;
+}
+
+/* Animation pour le menu déroulant */
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: slideInFromTop 0.2s ease-out;
+}
+
+/* Responsive pour le sélecteur de langue */
+@media (max-width: 767px) {
+  .language-dropdown {
+    left: 0;
+    right: 0;
+  }
+
+  .language-button {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* Styles pour le menu mobile amélioré */
+.mobile-menu-overlay {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.mobile-menu-container {
+  animation: slideInFromTop 0.3s ease-out;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.mobile-menu-item {
+  transition: all 0.2s ease-in-out;
+}
+
+.mobile-menu-item:hover {
+  transform: translateX(4px);
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.mobile-submenu {
+  animation: slideInFromLeft 0.2s ease-out;
+}
+
+.mobile-contact-item {
+  transition: all 0.2s ease-in-out;
+}
+
+.mobile-contact-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Amélioration du bouton hamburger */
+.hamburger-button {
+  transition: all 0.2s ease-in-out;
+}
+
+.hamburger-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.hamburger-icon {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Amélioration du sélecteur de langue pour navbar */
+.navbar-language-selector {
+  min-width: 80px;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+@media (min-width: 768px) {
+  .navbar-language-selector {
+    min-width: 100px;
+    display: block !important;
+  }
+}
+
+/* Forcer l'affichage du sélecteur de langue sur desktop */
+@media (min-width: 768px) {
+  .hidden.md\:block.navbar-language-selector {
+    display: block !important;
+  }
+}
+
+/* Styles spécifiques pour le sélecteur de langue visible */
+.language-selector-visible {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  color: white !important;
+}
+
+.language-selector-visible:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Style compact pour desktop - juste les drapeaux */
+.language-selector-desktop {
+  min-width: 60px !important;
+  padding: 8px 12px !important;
+}
+
+.language-selector-desktop .language-dropdown {
+  min-width: 80px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+/* Amélioration du contraste pour la navbar sombre */
+.navbar-language-selector .language-selector-visible {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+
+.navbar-language-selector .language-selector-visible:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
+  border-color: rgba(255, 255, 255, 0.6) !important;
+}
