@@ -38,6 +38,38 @@
   box-shadow: var(--shadow-md);
 }
 
+/* Styles spécifiques pour la section Hero */
+.navbar-floating {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-floating .navbar-link {
+  color: white;
+  font-weight: 500;
+}
+
+.navbar-floating .navbar-link:hover {
+  color: rgba(59, 130, 246, 0.8);
+}
+
+.navbar-fixed {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-fixed .navbar-link {
+  color: #374151;
+  font-weight: 500;
+}
+
+.navbar-fixed .navbar-link:hover {
+  color: #2563eb;
+}
+
 .btn-outline {
   background-color: transparent;
   color: var(--color-primary);

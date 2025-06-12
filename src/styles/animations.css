@@ -1,0 +1,245 @@
+/* Animations pour Manos Tours */
+
+/* Hero Section Animations */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-title {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: var(--font-family-heading);
+}
+
+.hero-subtitle {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.hero-cta-primary {
+  box-shadow: 0 10px 30px rgba(0, 119, 190, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.hero-cta-primary:hover {
+  box-shadow: 0 15px 40px rgba(0, 119, 190, 0.4);
+}
+
+.hero-lang-toggle {
+  backdrop-filter: blur(10px);
+}
+
+/* Video Background */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Assurer que la vidéo remplit complètement l'espace sans barres noires */
+.video-background {
+  overflow: hidden;
+}
+
+.video-background video {
+  transform: scale(1.02); /* Légère mise à l'échelle pour éviter les bords */
+}
+
+/* Styles pour la section Pourquoi Grand-Popo */
+#why-grand-popo {
+  position: relative;
+}
+
+#why-grand-popo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+  z-index: -1;
+}
+
+/* Animation des cartes de fonctionnalités */
+.feature-card {
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card .emoji {
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .emoji {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Scroll Indicator - Design horizontal simple */
+.scroll-indicator {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+}
+
+/* Animation bounce personnalisée pour la flèche */
+@keyframes bounce-gentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-gentle 2s ease-in-out infinite;
+}
+
+/* Animations personnalisées */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40%, 43% {
+    transform: translateY(-8px);
+  }
+  70% {
+    transform: translateY(-4px);
+  }
+  90% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Classes utilitaires d'animation */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.6s ease-out forwards;
+}
+
+.animate-bounce-slow {
+  animation: bounce 2s infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero-cta-primary {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* Optimisations de performance */
+.hero-section * {
+  will-change: transform, opacity;
+}
+
+.video-background video {
+  will-change: auto;
+}
+
+/* Accessibilité */
+@media (prefers-reduced-motion: reduce) {
+  .hero-section *,
+  .scroll-indicator *,
+  .animate-bounce-slow,
+  .animate-pulse-slow {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
