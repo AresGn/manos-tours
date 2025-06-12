@@ -16,6 +16,8 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [showFallback, setShowFallback] = useState(true);
+  const [isMuted, setIsMuted] = useState(muted);
+  const [currentVolume, setCurrentVolume] = useState(volume);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -25,8 +27,8 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({
       setIsLoaded(true);
       setShowFallback(false);
       // Configurer le volume
-      if (!muted) {
-        video.volume = volume;
+      if (!isMuted) {
+        video.volume = currentVolume;
       }
       // Assurer la lecture automatique avec un délai
       setTimeout(() => {
@@ -65,7 +67,18 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({
       video.removeEventListener('loadstart', handleLoadStart);
       clearTimeout(fallbackTimeout);
     };
-  }, []);
+  }, [muted, volume]);
+
+  const toggleMute = () => {
+    const video = videoRef.current;
+    if (video) {
+      setIsMuted(!isMuted);
+      video.muted = !isMuted;
+      if (!isMuted) {
+        video.volume = currentVolume;
+      }
+    }
+  };
 
   return (
     <div className={`video-background ${className}`}>
@@ -82,17 +95,17 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({
           objectFit: 'cover',
           objectPosition: 'center center',
           minWidth: '100%',
-          minHeight: '100%'
+          minHeight: '100%',
+          pointerEvents: 'none'
         }}
         autoPlay
-        muted={muted}
+        muted={isMuted}
         loop
         playsInline
         poster={poster}
         preload="metadata"
         controls={false}
         disablePictureInPicture
-        style={{ pointerEvents: 'none' }}
       >
         <source src={src} type="video/mp4" />
         Votre navigateur ne supporte pas la lecture vidéo.
@@ -116,6 +129,27 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({
 
       {/* Gradient décoratif pour un effet plus cinématographique */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/20" />
+
+      {/* Contrôles audio flottants */}
+      {!muted && (
+        <button
+          onClick={toggleMute}
+          className="absolute bottom-4 right-4 z-20 bg-black/50 backdrop-blur-sm text-white p-3 rounded-full hover:bg-black/70 transition-all duration-300 hover:scale-110"
+          style={{ pointerEvents: 'auto' }}
+          aria-label={isMuted ? "Activer le son" : "Couper le son"}
+        >
+          {isMuted ? (
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.816L4.846 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.846l3.537-3.816a1 1 0 011.617.816zM16 8a1 1 0 011 1v2a1 1 0 11-2 0V9a1 1 0 011-1z" clipRule="evenodd" />
+              <path fillRule="evenodd" d="M15.293 6.293a1 1 0 011.414 0 6.97 6.97 0 010 9.414 1 1 0 11-1.414-1.414 4.97 4.97 0 000-7.586 1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
+          ) : (
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.816L4.846 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.846l3.537-3.816a1 1 0 011.617.816zM7 7.414L4.586 9H2v2h2.586L7 12.586V7.414z" clipRule="evenodd" />
+            </svg>
+          )}
+        </button>
+      )}
       
       {/* Loading state simplifié - affiché seulement pendant les 3 premières secondes */}
       {showFallback && !isLoaded && !hasError && (

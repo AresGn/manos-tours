@@ -59,8 +59,8 @@ const HeroSection: React.FC = () => {
         className="absolute inset-0"
         overlay={true}
         overlayOpacity={0.3}
-        muted={true}
-        volume={0}
+        muted={false}
+        volume={0.3}
       />
 
       {/* Contenu principal */}

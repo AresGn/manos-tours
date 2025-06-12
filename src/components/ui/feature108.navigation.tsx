@@ -27,7 +27,6 @@ export const TabNavigation: React.FC<TabNavigationProps> = ({
                 : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
               }
             `}
-            aria-pressed={activeTab === tab.value}
             role="tab"
             aria-selected={activeTab === tab.value}
           >
