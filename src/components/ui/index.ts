@@ -1,3 +1,10 @@
 export { default as LanguageSelector } from './LanguageSelector';
 export { default as ScrollIndicator } from './ScrollIndicator';
 export { default as VideoBackground } from './VideoBackground';
+export { Badge } from './badge';
+export { Button } from './button';
+export { Feature108 } from './feature108';
+export { Feature108Demo } from './feature108-demo';
+export { TabNavigation } from './feature108.navigation';
+export type { Feature108Props, Tab, TabContent } from './feature108.types';
+export { defaultTabs } from './feature108.data';

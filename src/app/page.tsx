@@ -1,6 +1,6 @@
 import React from 'react';
 import { HeroSection } from '@/components/sections/home';
-import WhyGrandPopoFeatureSection from '@/components/sections/home/WhyGrandPopoFeatureSection';
+import { Feature108Demo } from '@/components/ui/feature108-demo';
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
       <HeroSection />
 
       {/* Section Pourquoi Grand-Popo */}
-      <WhyGrandPopoFeatureSection />
+      <Feature108Demo />
 
       {/* Section suivante (placeholder pour le développement futur) */}
       <section id="next-section" className="min-h-screen bg-gray-50 flex items-center justify-center">
