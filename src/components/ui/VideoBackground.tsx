@@ -17,7 +17,6 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({
   const [hasError, setHasError] = useState(false);
   const [showFallback, setShowFallback] = useState(true);
   const [isMuted, setIsMuted] = useState(muted);
-  const [currentVolume, setCurrentVolume] = useState(volume);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -28,7 +27,7 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({
       setShowFallback(false);
       // Configurer le volume
       if (!isMuted) {
-        video.volume = currentVolume;
+        video.volume = volume;
       }
       // Assurer la lecture automatique avec un délai
       setTimeout(() => {
@@ -67,7 +66,7 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({
       video.removeEventListener('loadstart', handleLoadStart);
       clearTimeout(fallbackTimeout);
     };
-  }, [muted, volume]);
+  }, [muted, volume, isMuted]);
 
   const toggleMute = () => {
     const video = videoRef.current;
@@ -75,7 +74,7 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({
       setIsMuted(!isMuted);
       video.muted = !isMuted;
       if (!isMuted) {
-        video.volume = currentVolume;
+        video.volume = volume;
       }
     }
   };
