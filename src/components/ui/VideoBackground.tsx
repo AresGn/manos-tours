@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect, useState, useCallback } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { VideoBackgroundProps } from '@/lib/types';
 
 const VideoBackground: React.FC<VideoBackgroundProps> = ({

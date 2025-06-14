@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeroSection } from '@/components/sections/home';
+import { HeroSection, ManosGuideSection } from '@/components/sections/home';
 import { Feature108Demo } from '@/components/ui/feature108-demo';
 
 export default function Home() {
@@ -10,6 +10,9 @@ export default function Home() {
 
       {/* Section Pourquoi Grand-Popo */}
       <Feature108Demo />
+
+      {/* Section Manos, Votre Guide Expert */}
+      <ManosGuideSection />
 
       {/* Section suivante (placeholder pour le développement futur) */}
       <section id="next-section" className="min-h-screen bg-gray-50 flex items-center justify-center">
