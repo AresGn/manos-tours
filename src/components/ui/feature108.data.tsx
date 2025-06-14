@@ -13,7 +13,7 @@ export const defaultTabs: Tab[] = [
         "Découvrez les traditions ancestrales, les marchés colorés et l'hospitalité légendaire de Grand-Popo. Une expérience authentique qui vous marquera à vie.",
       buttonText: "Voir nos Tours",
       imageSrc:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+        "https://res.cloudinary.com/dwsjriapi/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1749901010/tnbqn4bcrogwerubryfm.jpg",
       imageAlt: "Culture traditionnelle béninoise",
     },
   },
@@ -28,7 +28,7 @@ export const defaultTabs: Tab[] = [
         "Profitez de kilomètres de plages de sable fin, d'eaux cristallines et de couchers de soleil spectaculaires. Un paradis tropical préservé du tourisme de masse.",
       buttonText: "Découvrir",
       imageSrc:
-        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+        "https://res.cloudinary.com/dwsjriapi/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1749900910/ay7qtn5gpcjrlbatcpyo.webp",
       imageAlt: "Plages de Grand-Popo",
     },
   },
@@ -43,7 +43,7 @@ export const defaultTabs: Tab[] = [
         "Visitez les sites historiques, les musées et les monuments qui racontent l'histoire fascinante de cette région. Un voyage dans le temps inoubliable.",
       buttonText: "En Savoir Plus",
       imageSrc:
-        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+        "https://res.cloudinary.com/dwsjriapi/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1749900889/pfn5edttg3iwtedbch7y.webp",
       imageAlt: "Sites historiques de Grand-Popo",
     },
   },
