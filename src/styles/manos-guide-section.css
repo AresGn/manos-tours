@@ -1,0 +1,202 @@
+/* Styles spécifiques pour la section Manos Guide Expert */
+
+/* Animation personnalisée pour les compteurs */
+@keyframes countUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Animation pour les cartes de statistiques */
+@keyframes cardHover {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.02);
+  }
+  100% {
+    transform: translateY(-3px) scale(1.01);
+  }
+}
+
+/* Styles pour la section Manos Guide */
+.manos-guide-section {
+  position: relative;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+}
+
+/* Amélioration des motifs de fond */
+.manos-guide-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(34, 139, 34, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 60%, rgba(244, 164, 96, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Styles pour les compteurs animés */
+.animated-counter {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
+}
+
+/* Styles pour les cartes de statistiques */
+.stat-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stat-card:hover {
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-8px);
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(59, 130, 246, 0.1);
+}
+
+/* Animation pour les icônes des statistiques */
+.stat-icon {
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.stat-card:hover .stat-icon {
+  transform: scale(1.2) rotate(5deg);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+/* Styles pour la citation */
+.quote-container {
+  position: relative;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(255, 255, 255, 0.8) 100%);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+.quote-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(59, 130, 246, 0.02) 100%);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* Styles pour l'image de Manos */
+.manos-image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.manos-image-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(59, 130, 246, 0.1) 50%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.manos-image-container:hover::after {
+  opacity: 1;
+}
+
+/* Styles pour les badges flottants */
+.floating-badge {
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Animation pour les barres de progression */
+.progress-bar {
+  background: linear-gradient(90deg, #3b82f6, #1d4ed8, #2563eb);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .animated-counter {
+    font-size: 2.5rem;
+  }
+  
+  .stat-card {
+    padding: 1.5rem;
+  }
+  
+  .quote-container {
+    padding: 1.5rem;
+    font-size: 1.125rem;
+  }
+}
+
+/* Amélioration de l'accessibilité */
+@media (prefers-reduced-motion: reduce) {
+  .animated-counter,
+  .stat-card,
+  .stat-icon,
+  .progress-bar {
+    animation: none;
+    transition: none;
+  }
+  
+  .stat-card:hover {
+    transform: none;
+  }
+}
+
+/* Focus states pour l'accessibilité */
+.stat-card:focus-within {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.quote-container button:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}

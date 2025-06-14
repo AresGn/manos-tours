@@ -6,6 +6,7 @@
 @import "../styles/components.css";
 @import "../styles/animations.css";
 @import "../styles/fixes.css";
+@import "../styles/manos-guide-section.css";
 
 :root {
   --background: #ffffff;
