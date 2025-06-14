@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { VideoBackgroundProps } from '@/lib/types';
 
 const VideoBackground: React.FC<VideoBackgroundProps> = ({
@@ -17,10 +17,42 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({
   const [hasError, setHasError] = useState(false);
   const [showFallback, setShowFallback] = useState(true);
   const [isMuted, setIsMuted] = useState(muted);
+  const [shouldLoad, setShouldLoad] = useState(false);
+  const [isIntersecting, setIsIntersecting] = useState(false);
 
+  // Intersection Observer pour le chargement différé
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setIsIntersecting(true);
+          // Délai pour commencer le chargement après que l'élément soit visible
+          setTimeout(() => {
+            setShouldLoad(true);
+          }, 500);
+        }
+      },
+      {
+        threshold: 0.1, // Déclencher quand 10% de la vidéo est visible
+        rootMargin: '100px' // Commencer le chargement 100px avant que l'élément soit visible
+      }
+    );
+
+    observer.observe(video);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  // Gestion du chargement et de la lecture de la vidéo
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !shouldLoad) return;
 
     const handleCanPlay = () => {
       setIsLoaded(true);
@@ -66,7 +98,7 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({
       video.removeEventListener('loadstart', handleLoadStart);
       clearTimeout(fallbackTimeout);
     };
-  }, [muted, volume, isMuted]);
+  }, [muted, volume, isMuted, shouldLoad]);
 
   const toggleMute = () => {
     const video = videoRef.current;
@@ -97,12 +129,12 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({
           minHeight: '100%',
           pointerEvents: 'none'
         }}
-        autoPlay
+        autoPlay={shouldLoad}
         muted={isMuted}
         loop
         playsInline
         poster={poster}
-        preload="metadata"
+        preload={shouldLoad ? "metadata" : "none"}
         controls={false}
         disablePictureInPicture
       >
@@ -150,12 +182,19 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({
         </button>
       )}
       
-      {/* Loading state simplifié - affiché seulement pendant les 3 premières secondes */}
-      {showFallback && !isLoaded && !hasError && (
+      {/* Loading state amélioré avec chargement différé */}
+      {(showFallback || !shouldLoad) && !isLoaded && !hasError && (
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 flex items-center justify-center">
           <div className="text-white text-center">
             <div className="animate-pulse text-2xl mb-2">🌊</div>
-            <p className="text-lg font-light">Chargement...</p>
+            <p className="text-lg font-light">
+              {!isIntersecting ? "Préparation..." : shouldLoad ? "Chargement..." : "Optimisation..."}
+            </p>
+            {shouldLoad && (
+              <div className="mt-3 w-32 h-1 bg-blue-800 rounded-full mx-auto overflow-hidden">
+                <div className="h-full bg-blue-400 rounded-full animate-pulse"></div>
+              </div>
+            )}
           </div>
         </div>
       )}

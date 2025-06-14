@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 import { Badge } from "@/components/ui/badge";
@@ -17,6 +17,14 @@ const Feature108 = ({
 }: Feature108Props) => {
   const [activeTab, setActiveTab] = useState(tabs[0].value);
   const currentTab = tabs.find(tab => tab.value === activeTab) || tabs[0];
+
+  // Précharger toutes les images pour un changement d'onglet plus fluide
+  useEffect(() => {
+    tabs.forEach((tab) => {
+      const img = new window.Image();
+      img.src = tab.content.imageSrc;
+    });
+  }, [tabs]);
   return (
     <section
       id="pourquoi-grand-popo"
@@ -83,9 +91,12 @@ const Feature108 = ({
                     src={currentTab.content.imageSrc}
                     alt={currentTab.content.imageAlt}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-opacity duration-300"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
                     priority={currentTab.value === tabs[0].value}
+                    quality={85}
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                   />
                 </div>
               </div>
