@@ -118,10 +118,10 @@ const ManosGuideSection: React.FC = () => {
         </div>
 
         {/* Section principale : Image + Texte selon le schéma */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-16">
+        <div className="manos-main-layout mb-16">
 
           {/* Section Image - Gauche (Photo rectangulaire verticale) */}
-          <div className={`lg:col-span-4 transition-all duration-1000 delay-200 ${
+          <div className={`manos-photo-section transition-all duration-1000 delay-200 ${
             isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
           }`}>
             <div className="relative group">
@@ -160,7 +160,7 @@ const ManosGuideSection: React.FC = () => {
           </div>
 
           {/* Section Contenu - Droite (Texte descriptif + Citation) */}
-          <div className={`lg:col-span-8 transition-all duration-1000 delay-400 ${
+          <div className={`manos-content-section transition-all duration-1000 delay-400 ${
             isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
           }`}>
 

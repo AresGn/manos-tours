@@ -1,5 +1,48 @@
 /* Styles spécifiques pour la section Manos Guide Expert */
 
+/* FORCER la mise en page principale : Photo à gauche, Contenu à droite */
+.manos-main-layout {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2rem !important;
+  width: 100% !important;
+}
+
+@media (min-width: 1024px) {
+  .manos-main-layout {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 3rem !important;
+    align-items: flex-start !important;
+  }
+}
+
+/* Photo section - gauche sur desktop */
+.manos-photo-section {
+  width: 100% !important;
+  flex: none !important;
+}
+
+@media (min-width: 1024px) {
+  .manos-photo-section {
+    width: 33.333333% !important; /* équivalent à col-span-4 sur 12 colonnes */
+    flex: 0 0 33.333333% !important;
+  }
+}
+
+/* Contenu section - droite sur desktop */
+.manos-content-section {
+  width: 100% !important;
+  flex: 1 !important;
+}
+
+@media (min-width: 1024px) {
+  .manos-content-section {
+    width: 66.666667% !important; /* équivalent à col-span-8 sur 12 colonnes */
+    flex: 0 0 66.666667% !important;
+  }
+}
+
 /* Animation personnalisée pour les compteurs */
 @keyframes countUp {
   from {
