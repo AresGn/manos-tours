@@ -265,7 +265,7 @@ export function PremiumTestimonials() {
 
         {/* Main Testimonial Display */}
         <div className="relative max-w-6xl mx-auto mb-8">
-          <div className="relative h-[500px] md:h-[400px] perspective-1000">
+          <div className="relative min-h-[400px] perspective-1000">
             <AnimatePresence initial={false} custom={direction}>
               <motion.div
                 key={currentIndex}
@@ -280,9 +280,9 @@ export function PremiumTestimonials() {
                   scale: { duration: 0.4 },
                   rotateY: { duration: 0.6 }
                 }}
-                className="absolute inset-0"
+                className="absolute inset-0 w-full"
               >
-                <div className="relative h-full bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-xl rounded-3xl border border-white/[0.15] p-8 md:p-12 overflow-hidden group">
+                <div className="relative w-full bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-xl rounded-3xl border border-white/[0.15] p-6 md:p-8 lg:p-12 overflow-hidden group">
                   {/* Animated background gradient */}
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.08] via-purple-500/[0.05] to-rose-500/[0.08] rounded-3xl"
@@ -301,22 +301,23 @@ export function PremiumTestimonials() {
 
                   {/* Quote icon */}
                   <motion.div
-                    className="absolute top-8 right-8 opacity-20"
+                    className="absolute top-6 right-6 md:top-8 md:right-8 opacity-20"
                     animate={{ rotate: [0, 10, 0] }}
                     transition={{ duration: 4, repeat: Infinity }}
                   >
-                    <Quote className="w-16 h-16 text-white" />
+                    <Quote className="w-12 h-12 md:w-16 md:h-16 text-white" />
                   </motion.div>
 
-                  <div className="relative z-10 h-full flex flex-col md:flex-row items-center gap-8">
-                    {/* User Info */}
-                    <div className="flex-shrink-0 text-center md:text-left">
+                  <div className="relative z-10 w-full flex flex-col lg:flex-row items-start gap-6 lg:gap-8">
+                    {/* User Info - Image et infos de base */}
+                    <div className="flex-shrink-0 flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-6 w-full lg:w-auto">
+                      {/* Avatar */}
                       <motion.div
-                        className="relative mb-6"
-                        whileHover={{ scale: 1.1 }}
+                        className="relative"
+                        whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <div className="w-24 h-24 mx-auto md:mx-0 rounded-full overflow-hidden border-4 border-white/20 relative">
+                        <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden border-4 border-white/20 relative">
                           <img
                             src={testimonials[currentIndex].avatar}
                             alt={testimonials[currentIndex].name}
@@ -340,35 +341,38 @@ export function PremiumTestimonials() {
                         />
                       </motion.div>
 
-                      <h3 className="text-2xl font-bold text-white mb-2">
-                        {testimonials[currentIndex].name}
-                      </h3>
-                      <p className="text-indigo-300 mb-1 font-medium">
-                        {testimonials[currentIndex].role}
-                      </p>
-                      <p className="text-white/60 mb-4">
-                        {testimonials[currentIndex].company}
-                      </p>
+                      {/* Infos utilisateur */}
+                      <div className="text-center lg:text-left">
+                        <h3 className="text-xl lg:text-2xl font-bold text-white mb-1">
+                          {testimonials[currentIndex].name}
+                        </h3>
+                        <p className="text-indigo-300 font-medium text-sm lg:text-base mb-1">
+                          {testimonials[currentIndex].role}
+                        </p>
+                        <p className="text-white/60 text-sm lg:text-base mb-3">
+                          {testimonials[currentIndex].company}
+                        </p>
 
-                      {/* Star Rating */}
-                      <div className="flex justify-center md:justify-start gap-1 mb-6">
-                        {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                          <motion.div
-                            key={i}
-                            initial={{ opacity: 0, scale: 0 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: i * 0.1, duration: 0.3 }}
-                          >
-                            <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                          </motion.div>
-                        ))}
+                        {/* Star Rating - Mieux alignées */}
+                        <div className="flex justify-center lg:justify-start gap-1">
+                          {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
+                            <motion.div
+                              key={i}
+                              initial={{ opacity: 0, scale: 0 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{ delay: i * 0.1, duration: 0.3 }}
+                            >
+                              <Star className="w-4 h-4 lg:w-5 lg:h-5 fill-yellow-400 text-yellow-400" />
+                            </motion.div>
+                          ))}
+                        </div>
                       </div>
                     </div>
 
-                    {/* Content */}
-                    <div className="flex-1">
+                    {/* Content - Témoignage sur la même ligne */}
+                    <div className="flex-1 w-full lg:w-auto flex flex-col justify-start">
                       <motion.blockquote
-                        className="text-xl md:text-2xl text-white/90 leading-relaxed mb-8 font-light italic"
+                        className="text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed mb-4 lg:mb-6 font-light italic"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.3, duration: 0.8 }}
@@ -376,18 +380,18 @@ export function PremiumTestimonials() {
                         "{testimonials[currentIndex].text}"
                       </motion.blockquote>
 
-                      {/* Results */}
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                      {/* Results - Disposées horizontalement */}
+                      <div className="flex flex-wrap gap-2 lg:gap-3 justify-start">
                         {testimonials[currentIndex].results.map((result, i) => (
                           <motion.div
                             key={i}
-                            className="bg-white/[0.05] rounded-lg p-3 border border-white/[0.1] backdrop-blur-sm"
+                            className="bg-white/[0.05] rounded-full px-3 py-2 border border-white/[0.1] backdrop-blur-sm flex-shrink-0"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.5 + i * 0.1, duration: 0.5 }}
                             whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.1)" }}
                           >
-                            <span className="text-sm text-white/70 font-medium">
+                            <span className="text-xs lg:text-sm text-white/70 font-medium whitespace-nowrap">
                               {result}
                             </span>
                           </motion.div>
