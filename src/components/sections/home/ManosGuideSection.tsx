@@ -222,7 +222,7 @@ const ManosGuideSection: React.FC = () => {
         <div className={`transition-all duration-1000 delay-800 ${
           isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
         }`}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+          <div className="manos-stats-grid">
             {stats.map((stat, index) => (
               <div
                 key={index}

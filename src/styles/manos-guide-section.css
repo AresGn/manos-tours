@@ -43,6 +43,20 @@
   }
 }
 
+/* Forcer l'alignement des statistiques en 3 colonnes */
+.manos-stats-grid {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 2rem !important;
+}
+
+@media (min-width: 768px) {
+  .manos-stats-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 3rem !important;
+  }
+}
+
 /* Animation personnalisée pour les compteurs */
 @keyframes countUp {
   from {

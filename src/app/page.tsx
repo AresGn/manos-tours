@@ -1,6 +1,8 @@
 import React from 'react';
 import { HeroSection, ManosGuideSection } from '@/components/sections/home';
 import { Feature108Demo } from '@/components/ui/feature108-demo';
+import { PremiumTestimonials } from '@/components/ui/premium-testimonials';
+import ServicesSection from '@/components/sections/home/ServicesSection';
 
 export default function Home() {
   return (
@@ -13,6 +15,12 @@ export default function Home() {
 
       {/* Section Manos, Votre Guide Expert */}
       <ManosGuideSection />
+
+      {/* Section Ce que nous offrons */}
+      <ServicesSection />
+
+      {/* Section Témoignages */}
+      <PremiumTestimonials />
 
       {/* Section suivante (placeholder pour le développement futur) */}
       <section id="next-section" className="min-h-screen bg-gray-50 flex items-center justify-center">
