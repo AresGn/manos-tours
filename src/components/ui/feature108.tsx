@@ -28,7 +28,7 @@ const Feature108 = ({
   return (
     <section
       id="pourquoi-grand-popo"
-      className="py-16 md:py-24 lg:py-32"
+      className="py-12 md:py-16 lg:py-20"
       style={{
         background: 'linear-gradient(135deg, #111827 0%, #1f2937 100%)'
       }}

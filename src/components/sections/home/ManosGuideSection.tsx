@@ -97,7 +97,7 @@ const ManosGuideSection: React.FC = () => {
   return (
     <section
       id="manos-guide-expert"
-      className="py-16 md:py-24 lg:py-32 relative overflow-hidden"
+      className="py-12 md:py-16 lg:py-20 relative overflow-hidden"
       style={{
         background: 'linear-gradient(135deg, #111827 0%, #1f2937 100%)'
       }}
@@ -118,10 +118,10 @@ const ManosGuideSection: React.FC = () => {
         </div>
 
         {/* Section principale : Image + Texte selon le schéma */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-16">
+        <div className="manos-main-layout mb-16">
 
           {/* Section Image - Gauche (Photo rectangulaire verticale) */}
-          <div className={`lg:col-span-4 transition-all duration-1000 delay-200 ${
+          <div className={`manos-photo-section transition-all duration-1000 delay-200 ${
             isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
           }`}>
             <div className="relative group">
@@ -160,7 +160,7 @@ const ManosGuideSection: React.FC = () => {
           </div>
 
           {/* Section Contenu - Droite (Texte descriptif + Citation) */}
-          <div className={`lg:col-span-8 transition-all duration-1000 delay-400 ${
+          <div className={`manos-content-section transition-all duration-1000 delay-400 ${
             isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
           }`}>
 
@@ -222,7 +222,7 @@ const ManosGuideSection: React.FC = () => {
         <div className={`transition-all duration-1000 delay-800 ${
           isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
         }`}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+          <div className="manos-stats-grid">
             {stats.map((stat, index) => (
               <div
                 key={index}

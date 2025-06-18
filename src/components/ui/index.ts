@@ -8,3 +8,4 @@ export { Feature108Demo } from './feature108-demo';
 export { TabNavigation } from './feature108.navigation';
 export type { Feature108Props, Tab, TabContent } from './feature108.types';
 export { defaultTabs } from './feature108.data';
+export { PremiumTestimonials } from './premium-testimonials';
