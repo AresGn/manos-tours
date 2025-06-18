@@ -123,7 +123,13 @@ export function PremiumTestimonials() {
   };
 
   return (
-    <section id="testimonials" className="relative py-32 bg-gradient-to-br from-black via-indigo-950/20 to-black text-white overflow-hidden">
+    <section
+      id="testimonials"
+      className="relative py-12 md:py-16 lg:py-20 text-white overflow-hidden"
+      style={{
+        background: 'linear-gradient(135deg, #111827 0%, #1f2937 100%)'
+      }}
+    >
       {/* Enhanced Background Effects */}
       <div className="absolute inset-0">
         {/* Animated gradient mesh */}
@@ -204,7 +210,7 @@ export function PremiumTestimonials() {
       >
         {/* Header */}
         <motion.div 
-          className="text-center mb-20"
+          className="text-center mb-12"
           variants={fadeInUp}
         >
           <motion.div
@@ -231,8 +237,8 @@ export function PremiumTestimonials() {
               Ils nous font
             </span>
             <br />
-            <motion.span 
-              className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-purple-300 to-rose-300"
+            <motion.span
+              className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600"
               animate={{
                 backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
               }}
@@ -258,7 +264,7 @@ export function PremiumTestimonials() {
         </motion.div>
 
         {/* Main Testimonial Display */}
-        <div className="relative max-w-6xl mx-auto mb-16">
+        <div className="relative max-w-6xl mx-auto mb-8">
           <div className="relative h-[500px] md:h-[400px] perspective-1000">
             <AnimatePresence initial={false} custom={direction}>
               <motion.div
@@ -435,37 +441,6 @@ export function PremiumTestimonials() {
             </motion.button>
           </div>
         </div>
-
-        {/* Stats Section */}
-        <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-8"
-          variants={staggerContainer}
-        >
-          {[
-            { number: "200+", label: "Voyageurs Satisfaits" },
-            { number: "98%", label: "Taux de Satisfaction" },
-            { number: "50+", label: "Destinations Uniques" },
-            { number: "15", label: "Ans d'Expérience" }
-          ].map((stat, index) => (
-            <motion.div
-              key={index}
-              className="text-center group"
-              variants={fadeInUp}
-              whileHover={{ scale: 1.05 }}
-            >
-              <motion.div
-                className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-indigo-300 to-rose-300 bg-clip-text text-transparent mb-2"
-                animate={{ opacity: [0.7, 1, 0.7] }}
-                transition={{ duration: 2, repeat: Infinity, delay: index * 0.5 }}
-              >
-                {stat.number}
-              </motion.div>
-              <div className="text-white/60 text-sm font-medium group-hover:text-white/80 transition-colors">
-                {stat.label}
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
       </motion.div>
     </section>
   );

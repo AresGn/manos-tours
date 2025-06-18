@@ -121,14 +121,14 @@ const ServicesSection: React.FC = () => {
   return (
     <section
       id="services"
-      className="py-16 md:py-24 lg:py-32 relative overflow-hidden"
+      className="py-12 md:py-16 lg:py-20 relative overflow-hidden"
       style={{
         background: 'linear-gradient(135deg, #111827 0%, #1f2937 100%)'
       }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Titre de la section */}
-        <div className={`text-center mb-16 transition-all duration-1000 ${
+        <div className={`text-center mb-12 transition-all duration-1000 ${
           isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">

@@ -97,7 +97,7 @@ const ManosGuideSection: React.FC = () => {
   return (
     <section
       id="manos-guide-expert"
-      className="py-16 md:py-24 lg:py-32 relative overflow-hidden"
+      className="py-12 md:py-16 lg:py-20 relative overflow-hidden"
       style={{
         background: 'linear-gradient(135deg, #111827 0%, #1f2937 100%)'
       }}
