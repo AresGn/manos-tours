@@ -1,8 +1,9 @@
 "use client";
 
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
 import { Quote, Star, ArrowLeft, ArrowRight, Sparkles } from 'lucide-react';
+import Image from 'next/image';
 
 const testimonials = [
   {
@@ -89,19 +90,19 @@ export function PremiumTestimonials() {
     })
   };
 
-  const fadeInUp = {
+  const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 60 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { 
-        duration: 0.8, 
-        ease: [0.23, 0.86, 0.39, 0.96] 
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
       }
     }
   };
 
-  const staggerContainer = {
+  const staggerContainer: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -318,10 +319,12 @@ export function PremiumTestimonials() {
                         transition={{ duration: 0.3 }}
                       >
                         <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden border-4 border-white/20 relative">
-                          <img
+                          <Image
                             src={testimonials[currentIndex].avatar}
                             alt={testimonials[currentIndex].name}
                             className="w-full h-full object-cover"
+                            width={96}
+                            height={96}
                           />
                           <motion.div
                             className="absolute inset-0 bg-gradient-to-br from-indigo-400/20 to-rose-400/20"
@@ -377,7 +380,7 @@ export function PremiumTestimonials() {
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.3, duration: 0.8 }}
                       >
-                        "{testimonials[currentIndex].text}"
+                        &ldquo;{testimonials[currentIndex].text}&rdquo;
                       </motion.blockquote>
 
                       {/* Results - Disposées horizontalement */}

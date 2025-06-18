@@ -188,8 +188,8 @@ const FAQSection: React.FC = () => {
           </h2>
           
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-            Découvrez tout ce que vous devez savoir pour vivre une expérience inoubliable 
-            en Afrique de l'Ouest avec nos experts locaux
+            Découvrez tout ce que vous devez savoir pour vivre une expérience inoubliable
+            en Afrique de l&apos;Ouest avec nos experts locaux
           </p>
           
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto rounded-full"></div>
