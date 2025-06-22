@@ -33,10 +33,10 @@ const WhyGrandPopoFeatureSection: React.FC = () => {
           image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2070&auto=format&fit=crop"
         },
         {
-          step: "🐢",
-          title: "Sanctuaire Tortues",
-          content: "Vivez l'expérience unique d'observer les tortues marines dans leur habitat naturel. Participez à la protection de ces espèces menacées lors de leur ponte nocturne.",
-          image: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?q=80&w=2070&auto=format&fit=crop"
+          step: "�",
+          title: "Faune Sauvage",
+          content: "Découvrez la richesse de la faune africaine dans les réserves naturelles proches de Grand-Popo. Une expérience inoubliable au cœur de la nature préservée.",
+          image: "https://images.pexels.com/photos/70080/elephant-mammal-animal-trunk-70080.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         }
       ]
     },

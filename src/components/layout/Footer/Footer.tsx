@@ -11,10 +11,10 @@ const Footer = () => {
     {
       title: "Destination",
       links: [
-        { label: "Grand-Popo", href: "/grand-popo" },
         { label: "Histoire & Culture", href: "/grand-popo/histoire" },
         { label: "Plages & Nature", href: "/grand-popo/plages" },
         { label: "Gastronomie", href: "/grand-popo/gastronomie" },
+        { label: "Hébergements", href: "/grand-popo/hebergements" },
       ]
     },
     {
