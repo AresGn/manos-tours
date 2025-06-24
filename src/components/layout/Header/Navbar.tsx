@@ -21,7 +21,8 @@ const menu = [
   {
     label: "Expériences",
     children: [
-      { label: "Tours Privés & Groupes", href: "/experiences" },
+      { label: "Toutes les Expériences", href: "/experiences" },
+      { label: "Tours Privés & Groupes", href: "/experiences/tours-prives" },
       { label: "Expériences Sur-Mesure", href: "/experiences/sur-mesure" },
       { label: "Écotourisme & Éthique", href: "/experiences/ecotourisme" },
       { label: "Packages Complets", href: "/experiences/packages" },
