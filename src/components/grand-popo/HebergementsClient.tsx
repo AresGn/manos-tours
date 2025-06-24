@@ -8,37 +8,38 @@ import { Home, Tent, Building, Star } from 'lucide-react';
 const accommodationTypes = [
   {
     icon: <Building className="w-8 h-8" />,
-    title: "Hôtels Boutique",
-    description: "Établissements de charme avec vue sur l'océan et service personnalisé",
+    title: "Hôtels & Auberges",
+    description: "Auberge de Grand-Popo, Hôtel Etoile de Mer, Hôtel Awalé plage, Hôtel Bel AZUR bien équipés",
     color: "from-blue-500 to-cyan-400"
   },
   {
     icon: <Home className="w-8 h-8" />,
-    title: "Cases Traditionnelles",
-    description: "Hébergements authentiques rénovés dans le respect des traditions",
+    title: "Villa Sonnenblume",
+    description: "Résidence du peintre Koffi Dossou, 7 chambres d'hôtes, piscine et point culturel à 200m de la mer",
     color: "from-orange-500 to-red-400"
   },
   {
     icon: <Tent className="w-8 h-8" />,
-    title: "Camping Équipé",
-    description: "Expérience nature avec tout le confort face à la mer",
+    title: "Hébergements Nature",
+    description: "Expérience authentique dans un cadre naturel préservé face à l'océan Atlantique",
     color: "from-green-500 to-emerald-400"
   },
   {
     icon: <Star className="w-8 h-8" />,
-    title: "Homestay Authentique",
-    description: "Séjour chez l'habitant pour une immersion culturelle totale",
+    title: "Chez l'Habitant",
+    description: "Immersion totale dans la culture Xwlà avec les familles locales de Grand-Popo",
     color: "from-purple-500 to-pink-400"
   }
 ];
 
 export default function HebergementsClient() {
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative h-96 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <OptimizedImage
+            src="/images/Logement/DSC_0004-scaled.jpg"
             className="absolute inset-0 w-full h-full"
             alt="Hébergements à Grand-Popo"
             fallbackText="Hébergements à Grand-Popo"
@@ -57,21 +58,21 @@ export default function HebergementsClient() {
               Hébergements
             </motion.h1>
             
-            <motion.p 
+            <motion.p
               className="text-xl md:text-2xl font-light leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.3 }}
             >
-              Trouvez votre cocon parfait à Grand-Popo,
-              <span className="text-blue-400"> du luxe à l'authentique</span>
+              Séjournez dans la "perle du sud-ouest béninois",
+              <span className="text-blue-400"> entre mer et traditions</span>
             </motion.p>
           </div>
         </div>
       </section>
 
       {/* Accommodation Types */}
-      <section className="py-20 bg-gray-800">
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-green-50">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -79,10 +80,10 @@ export default function HebergementsClient() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-white mb-6 font-playfair">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-playfair">
               Types d'Hébergements
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               Manos vous aide à choisir l'hébergement idéal selon vos envies
             </p>
           </motion.div>
@@ -118,7 +119,7 @@ export default function HebergementsClient() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-gray-900">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -126,10 +127,10 @@ export default function HebergementsClient() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-white mb-6 font-playfair">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-playfair">
               Services Manos Tours
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               Réservation simplifiée et accompagnement personnalisé
             </p>
           </motion.div>
@@ -139,10 +140,10 @@ export default function HebergementsClient() {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="bg-gray-800 rounded-xl p-8"
+              className="bg-white rounded-xl p-8 shadow-lg border border-gray-200"
             >
-              <h3 className="text-2xl font-bold text-white mb-6">Réservation Intégrée</h3>
-              <ul className="space-y-4 text-gray-300">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Réservation Intégrée</h3>
+              <ul className="space-y-4 text-gray-600">
                 <li className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
                   Calendrier temps réel des disponibilités
@@ -166,10 +167,10 @@ export default function HebergementsClient() {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="bg-gray-800 rounded-xl p-8"
+              className="bg-white rounded-xl p-8 shadow-lg border border-gray-200"
             >
-              <h3 className="text-2xl font-bold text-white mb-6">Partenariats Premium</h3>
-              <ul className="space-y-4 text-gray-300">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Partenariats Premium</h3>
+              <ul className="space-y-4 text-gray-600">
                 <li className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                   Sélection rigoureuse des établissements
@@ -200,7 +201,7 @@ export default function HebergementsClient() {
               <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl">
                 Voir les Disponibilités
               </button>
-              <button className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300">
+              <button className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300">
                 Demander Conseil à Manos
               </button>
             </div>

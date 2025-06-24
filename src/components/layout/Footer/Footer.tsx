@@ -74,7 +74,7 @@ const Footer = () => {
         <div className="text-center mb-12">
           <div className="flex justify-center mb-6">
             <Image
-              src="/images/logo.jpeg"
+              src="/images/logo.jpg"
               alt="Logo Manos Tours"
               width={100}
               height={100}

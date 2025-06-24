@@ -10,21 +10,21 @@ import { MapPin, Users, Camera } from 'lucide-react';
 const quickLinks = [
   {
     title: 'Plages & Nature',
-    description: 'Explorez les plages sauvages, mangroves et la faune exceptionnelle',
+    description: 'Découvrez 30 km de plages sauvages, la Bouche du Roy et les mangroves d\'Avlo',
     href: '/grand-popo/plages',
     icon: <Camera className="w-6 h-6" />,
     color: 'from-blue-600 to-cyan-600'
   },
   {
     title: 'Gastronomie Locale',
-    description: 'Savourez les délices culinaires authentiques de la région',
+    description: 'Fruits de mer frais, sodabi traditionnel et spécialités béninoises authentiques',
     href: '/grand-popo/gastronomie',
     icon: <Users className="w-6 h-6" />,
     color: 'from-orange-600 to-red-600'
   },
   {
     title: 'Hébergements',
-    description: 'Trouvez le logement parfait pour votre séjour à Grand-Popo',
+    description: 'Hôtels de charme, Villa Sonnenblume et séjours chez l\'habitant Xwlà',
     href: '/grand-popo/hebergements',
     icon: <MapPin className="w-6 h-6" />,
     color: 'from-green-600 to-emerald-600'
@@ -39,6 +39,7 @@ export default function GrandPopoIntro() {
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <OptimizedImage
+            src="/images/hero-poster.jpg"
             className="absolute inset-0 w-full h-full"
             alt="Vue panoramique de Grand-Popo"
             fallbackText="Vue panoramique de Grand-Popo"
@@ -59,14 +60,14 @@ export default function GrandPopoIntro() {
               Grand-Popo
             </motion.h1>
             
-            <motion.p 
+            <motion.p
               className="text-xl md:text-2xl mb-8 font-light leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.3 }}
             >
-              N&apos;est pas juste une destination,<br />
-              <span className="text-yellow-400 font-semibold">c&apos;est une émotion</span>
+              La "perle du sud-ouest béninois",<br />
+              <span className="text-yellow-400 font-semibold">où l&apos;histoire rencontre l&apos;océan</span>
             </motion.p>
 
             <motion.div
@@ -76,8 +77,8 @@ export default function GrandPopoIntro() {
               className="mb-12"
             >
               <p className="text-lg text-gray-200 max-w-2xl mx-auto">
-                Découvrez la perle du Bénin avec Manos, votre guide expert local. 
-                Explorez l'histoire, la culture et les traditions de cette destination unique.
+                Découvrez cette commune de 57 636 habitants avec Manos, votre guide expert local.
+                Explorez le royaume Xwlà, les traditions vodoun et 30 km de plages sauvages.
               </p>
             </motion.div>
           </div>
@@ -96,7 +97,7 @@ export default function GrandPopoIntro() {
       </section>
 
       {/* Interactive Map Section */}
-      <section className="py-20 bg-gray-800">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -104,11 +105,11 @@ export default function GrandPopoIntro() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold text-white mb-6 font-playfair">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-playfair">
               Explorez Grand-Popo
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Découvrez les points d'intérêt de cette destination exceptionnelle sur la vraie carte OpenStreetMap
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              Explorez les 44 villages de la commune, de la Bouche du Roy aux temples vodoun sur la vraie carte OpenStreetMap
             </p>
           </motion.div>
 
@@ -123,7 +124,7 @@ export default function GrandPopoIntro() {
       </section>
 
       {/* Quick Navigation */}
-      <section className="py-20 bg-gray-900">
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-gray-100">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -131,10 +132,10 @@ export default function GrandPopoIntro() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-white mb-6 font-playfair">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-playfair">
               Découvrez aussi...
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               Explorez les autres facettes de Grand-Popo avec Manos
             </p>
           </motion.div>

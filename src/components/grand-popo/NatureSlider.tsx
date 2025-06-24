@@ -20,32 +20,32 @@ interface NatureSlide {
 const natureSlides: NatureSlide[] = [
   {
     id: 'plages',
-    title: 'Plages Sauvages',
-    subtitle: 'Côte Atlantique Préservée',
-    description: 'Des kilomètres de plages vierges où les tortues marines viennent pondre sous les étoiles. Le sable doré s\'étend à perte de vue, caressé par les vagues de l\'Atlantique.',
-    image: 'placeholder',
+    title: 'Plages de Grand-Popo',
+    subtitle: 'Lieux de Rêve Infini',
+    description: 'Splendide façade littorale de 30 à 45 km de Docloboé à Hilla-Condji. Plages de sable fin bordées de cocotiers où les grandes tortues marines viennent déposer leurs œufs chaque année.',
+    image: '/images/Plage/la-mer-a-coco-beach.jpg',
     ambientSound: 'placeholder',
-    highlights: ['Ponte des tortues marines', 'Couchers de soleil spectaculaires', 'Plages privées et sauvages'],
+    highlights: ['Ponte des tortues marines', 'Cocotiers centenaires', 'Sable fin doré'],
     color: 'from-blue-500 to-cyan-400'
   },
   {
     id: 'mangroves',
-    title: 'Mangroves Mystiques',
-    subtitle: 'Écosystème Unique',
-    description: 'Naviguez en pirogue traditionnelle à travers les canaux secrets des mangroves. Un monde aquatique où la nature règne en maître, refuge d\'une biodiversité exceptionnelle.',
-    image: 'placeholder',
+    title: 'Presqu\'île d\'Avlo',
+    subtitle: 'Royaume de Mangrove',
+    description: 'Cité lacustre accessible en pirogue depuis Gbêkon. Havre de paix abritant une biodiversité unique avec palétuviers, joncacées et graminées dans un écosystème préservé.',
+    image: '/images/Plage/courses_pirogues_aklo_show-1.png',
     ambientSound: 'placeholder',
-    highlights: ['Navigation en pirogue', 'Observation des oiseaux', 'Écosystème préservé'],
+    highlights: ['Navigation en pirogue traditionnelle', 'Villages authentiques', 'Palétuviers centenaires'],
     color: 'from-green-500 to-emerald-400'
   },
   {
-    id: 'faune',
-    title: 'Faune Exceptionnelle',
-    subtitle: 'Biodiversité Remarquable',
-    description: 'Découvrez une faune riche et variée : singes, oiseaux tropicaux, reptiles et mammifères marins. Chaque rencontre est un moment magique dans ce sanctuaire naturel.',
-    image: 'placeholder',
+    id: 'bouche-du-roy',
+    title: 'Bouche du Roy',
+    subtitle: 'Merveille Naturelle',
+    description: 'Embouchure majestueuse où le fleuve Mono rencontre l\'océan Atlantique. Sanctuaire pour de nombreuses espèces marines et d\'oiseaux, refuge des hippopotames et des gros oiseaux d\'Europe.',
+    image: '/images/Plage/P8070124-scaled.jpg',
     ambientSound: 'placeholder',
-    highlights: ['Observation des primates', 'Oiseaux tropicaux', 'Mammifères marins'],
+    highlights: ['Observation des hippopotames', 'Oiseaux migrateurs', 'Confluence Mono-Atlantique'],
     color: 'from-orange-500 to-yellow-400'
   }
 ];
@@ -103,7 +103,7 @@ const NatureSlider = () => {
   const currentSlideData = natureSlides[currentSlide];
 
   return (
-    <section ref={ref} className="relative py-20 bg-gray-900 overflow-hidden">
+    <section ref={ref} className="relative py-20 bg-gradient-to-br from-gray-50 to-blue-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -111,11 +111,11 @@ const NatureSlider = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-playfair text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-playfair text-gray-900">
             Nature Exceptionnelle
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Immergez-vous dans les paysages époustouflants de Grand-Popo, 
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            Immergez-vous dans les paysages époustouflants de Grand-Popo,
             où chaque écosystème raconte une histoire unique.
           </p>
         </motion.div>
@@ -133,6 +133,7 @@ const NatureSlider = () => {
                 className="absolute inset-0"
               >
                 <OptimizedImage
+                  src={currentSlideData.image}
                   className="absolute inset-0 w-full h-full"
                   alt={currentSlideData.title}
                   fallbackText={currentSlideData.title}
@@ -220,7 +221,7 @@ const NatureSlider = () => {
                 onClick={() => setCurrentSlide(index)}
                 className={`
                   w-3 h-3 rounded-full transition-all duration-300
-                  ${index === currentSlide ? 'bg-blue-500 scale-125' : 'bg-gray-600 hover:bg-gray-500'}
+                  ${index === currentSlide ? 'bg-blue-500 scale-125' : 'bg-gray-400 hover:bg-gray-500'}
                 `}
               />
             ))}

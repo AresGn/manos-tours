@@ -9,37 +9,38 @@ import { Waves, TreePine, Camera, Sun } from 'lucide-react';
 const natureHighlights = [
   {
     icon: <Waves className="w-8 h-8" />,
-    title: "Plages Sauvages",
-    description: "Kilomètres de côtes préservées où les tortues marines viennent pondre",
+    title: "Plages de Sable Fin",
+    description: "30 à 45 km de façade littorale splendide bordée de cocotiers, où les grandes tortues marines viennent pondre",
     color: "from-blue-500 to-cyan-400"
   },
   {
     icon: <TreePine className="w-8 h-8" />,
-    title: "Mangroves Mystiques",
-    description: "Écosystème unique navigable en pirogue traditionnelle",
+    title: "Mangroves d'Avlo",
+    description: "Cité lacustre royaume de mangrove et de joncs, accessible en pirogue depuis Gbêkon",
     color: "from-green-500 to-emerald-400"
   },
   {
     icon: <Camera className="w-8 h-8" />,
-    title: "Faune Exceptionnelle",
-    description: "Biodiversité remarquable avec oiseaux tropicaux et mammifères marins",
+    title: "Bouche du Roy",
+    description: "Embouchure majestueuse où le fleuve Mono se jette dans l'océan Atlantique, sanctuaire de biodiversité",
     color: "from-orange-500 to-yellow-400"
   },
   {
     icon: <Sun className="w-8 h-8" />,
-    title: "Couchers de Soleil",
-    description: "Spectacles naturels inoubliables sur l'océan Atlantique",
+    title: "Lagune de Grand-Popo",
+    description: "15 km de lagune communiquant avec la mer et le Mono, refuge des gros oiseaux d'Europe",
     color: "from-purple-500 to-pink-400"
   }
 ];
 
 export default function PlagesClient() {
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative h-96 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <OptimizedImage
+            src="/images/Plage/446-visiter-grand-popo-benin.jpg"
             className="absolute inset-0 w-full h-full"
             alt="Plages sauvages de Grand-Popo"
             fallbackText="Plages sauvages de Grand-Popo"
@@ -58,21 +59,21 @@ export default function PlagesClient() {
               Plages & Nature
             </motion.h1>
             
-            <motion.p 
+            <motion.p
               className="text-xl md:text-2xl font-light leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.3 }}
             >
-              Explorez les merveilles naturelles de Grand-Popo,
-              <span className="text-cyan-400"> un paradis préservé</span>
+              Découvrez la "perle du sud-ouest béninois",
+              <span className="text-cyan-400"> ses plages sauvages et sa nature exceptionnelle</span>
             </motion.p>
           </div>
         </div>
       </section>
 
       {/* Nature Highlights */}
-      <section className="py-20 bg-gray-800">
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -80,10 +81,10 @@ export default function PlagesClient() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-white mb-6 font-playfair">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-playfair">
               Trésors Naturels
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               Découvrez la richesse écologique exceptionnelle de Grand-Popo
             </p>
           </motion.div>
@@ -122,25 +123,25 @@ export default function PlagesClient() {
       <NatureSlider />
 
       {/* Call to Action */}
-      <section className="py-20 bg-gray-900">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-playfair">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-playfair">
               Prêt pour l'Aventure ?
             </h2>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              Laissez Manos vous guider à travers ces merveilles naturelles 
+            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+              Laissez Manos vous guider à travers ces merveilles naturelles
               pour une expérience inoubliable et respectueuse de l'environnement.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl">
                 Réserver une Excursion Nature
               </button>
-              <button className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300">
+              <button className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300">
                 Voir le Calendrier
               </button>
             </div>

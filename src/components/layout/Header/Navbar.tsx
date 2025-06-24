@@ -65,7 +65,7 @@ export default function Navbar() {
           isTransparent ? 'text-white' : 'text-gray-800'
         }`}>
           <Image
-            src="/images/logo.jpeg"
+            src="/images/logo.jpg"
             alt="Logo Manos Tours"
             width={72}
             height={72}

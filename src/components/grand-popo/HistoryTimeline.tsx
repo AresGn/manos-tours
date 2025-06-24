@@ -21,33 +21,33 @@ const historyPeriods: HistoryPeriod[] = [
   {
     id: 'precolonial',
     period: 'XVe - XIXe siècle',
-    title: 'Royaume de Grand-Popo',
-    description: 'Fondation du royaume par les peuples Goun, centre commercial majeur de la côte ouest-africaine.',
-    details: 'Grand-Popo était un royaume prospère, contrôlant le commerce entre l\'intérieur du continent et les navires européens. Les rois de Grand-Popo étaient respectés pour leur diplomatie et leur sagesse commerciale.',
-    historicalImage: 'placeholder',
-    modernImage: 'placeholder',
+    title: 'Royaume Xwlà de Grand-Popo',
+    description: 'Fondation du royaume par les peuples Xwlà venus de Tado, centre commercial majeur de la côte ouest-africaine.',
+    details: 'Les Xwlà, après avoir quitté Tado, se dirigèrent vers le bord du fleuve Mono et fondèrent Adamè, première capitale. Le roi Mèto Ausãn développa le royaume en un centre commercial prospère, contrôlant les échanges entre l\'intérieur du continent et les navires européens.',
+    historicalImage: '/images/culture/01-25.jpg',
+    modernImage: '/images/culture/DSC_0277-scaled.jpg',
     icon: <Crown className="w-6 h-6" />,
     color: 'from-yellow-600 to-orange-600'
   },
   {
     id: 'colonial',
-    period: 'XIXe - XXe siècle',
-    title: 'Période Coloniale',
-    description: 'Arrivée des Européens, développement du port et transformation de la région.',
-    details: 'L\'établissement colonial a transformé Grand-Popo en un port important pour le commerce triangulaire, puis en centre administratif. Cette période a laissé des traces architecturales encore visibles aujourd\'hui.',
-    historicalImage: 'placeholder',
-    modernImage: 'placeholder',
+    period: '1727 - 1960',
+    title: 'Comptoir Colonial Français',
+    description: 'En 1727, les Français installent leur premier comptoir commercial. Grand-Popo devient un grand centre administratif.',
+    details: 'Le 12 avril 1885, Grand-Popo passe sous protectorat français. La ville était le seul débouché sur la mer des richesses agricoles du Mono jusqu\'à Parakou et Savalou. Elle supplantait Ouidah grâce à son chemin de fer et au wharf, jusqu\'à sa fermeture en 1965.',
+    historicalImage: '/images/culture/01-31.jpg',
+    modernImage: '/images/culture/Grand-Popo049-scaled.jpg',
     icon: <Ship className="w-6 h-6" />,
     color: 'from-blue-600 to-indigo-600'
   },
   {
     id: 'independence',
     period: '1960 - Aujourd\'hui',
-    title: 'Indépendance et Renaissance',
-    description: 'Indépendance du Bénin et développement du tourisme culturel et écologique.',
-    details: 'Depuis l\'indépendance, Grand-Popo s\'est réinventée comme destination touristique authentique, préservant ses traditions tout en s\'ouvrant au monde moderne.',
-    historicalImage: 'placeholder',
-    modernImage: 'placeholder',
+    title: 'Renaissance Touristique',
+    description: 'Après l\'indépendance, Grand-Popo se réinvente comme destination touristique authentique, préservant ses traditions.',
+    details: 'Aujourd\'hui commune de 57 636 habitants, Grand-Popo mise sur son patrimoine culturel exceptionnel, ses plages sauvages et ses traditions vodoun pour développer un tourisme responsable et authentique, devenant la "perle du sud-ouest béninois".',
+    historicalImage: '/images/culture/01-20.jpg',
+    modernImage: '/images/culture/DSC_0343-scaled.jpg',
     icon: <Users className="w-6 h-6" />,
     color: 'from-green-600 to-emerald-600'
   }
@@ -60,7 +60,7 @@ const HistoryTimeline = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-20 bg-gray-900 text-white">
+    <section ref={ref} className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 text-gray-900">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -71,8 +71,8 @@ const HistoryTimeline = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 font-playfair">
             Histoire Vivante
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Découvrez l'évolution fascinante de Grand-Popo à travers les siècles, 
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            Découvrez l'évolution fascinante de Grand-Popo à travers les siècles,
             des royaumes précoloniaux à la destination moderne d'aujourd'hui.
           </p>
         </motion.div>
@@ -90,9 +90,9 @@ const HistoryTimeline = () => {
                 key={period.id}
                 className={`
                   relative p-6 rounded-xl cursor-pointer transition-all duration-300
-                  ${selectedPeriod.id === period.id 
-                    ? 'bg-gradient-to-r ' + period.color + ' shadow-xl scale-105' 
-                    : 'bg-gray-800 hover:bg-gray-700'
+                  ${selectedPeriod.id === period.id
+                    ? 'bg-gradient-to-r ' + period.color + ' shadow-xl scale-105 text-white'
+                    : 'bg-white hover:bg-gray-50 shadow-md border border-gray-200'
                   }
                 `}
                 onClick={() => setSelectedPeriod(period)}
@@ -103,24 +103,24 @@ const HistoryTimeline = () => {
               >
                 <div className="flex items-center gap-4 mb-3">
                   <div className={`
-                    p-3 rounded-full 
-                    ${selectedPeriod.id === period.id ? 'bg-white/20' : 'bg-gray-700'}
+                    p-3 rounded-full
+                    ${selectedPeriod.id === period.id ? 'bg-white/20' : 'bg-blue-100'}
                   `}>
                     {period.icon}
                   </div>
                   <div>
                     <div className="flex items-center gap-2 mb-1">
                       <Calendar className="w-4 h-4" />
-                      <span className="text-sm font-semibold">{period.period}</span>
+                      <span className={`text-sm font-semibold ${selectedPeriod.id === period.id ? 'text-white' : 'text-gray-600'}`}>{period.period}</span>
                     </div>
-                    <h3 className="text-xl font-bold">{period.title}</h3>
+                    <h3 className={`text-xl font-bold ${selectedPeriod.id === period.id ? 'text-white' : 'text-gray-900'}`}>{period.title}</h3>
                   </div>
                 </div>
-                <p className="text-gray-300">{period.description}</p>
+                <p className={selectedPeriod.id === period.id ? 'text-white/90' : 'text-gray-600'}>{period.description}</p>
                 
                 {/* Timeline connector */}
                 {index < historyPeriods.length - 1 && (
-                  <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-1 h-6 bg-gray-600"></div>
+                  <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-1 h-6 bg-blue-300"></div>
                 )}
               </motion.div>
             ))}
@@ -135,6 +135,7 @@ const HistoryTimeline = () => {
           >
             <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
               <OptimizedImage
+                src={showModern ? selectedPeriod.modernImage : selectedPeriod.historicalImage}
                 className="w-full h-full transition-opacity duration-500"
                 alt={`${selectedPeriod.title} - ${showModern ? 'Moderne' : 'Historique'}`}
                 fallbackText={`${selectedPeriod.title} - ${showModern ? 'Moderne' : 'Historique'}`}
@@ -143,7 +144,7 @@ const HistoryTimeline = () => {
               {/* Overlay with details */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h4 className="text-2xl font-bold mb-3">{selectedPeriod.title}</h4>
+                  <h4 className="text-2xl font-bold mb-3 text-white">{selectedPeriod.title}</h4>
                   <p className="text-gray-200 leading-relaxed">{selectedPeriod.details}</p>
                 </div>
               </div>
@@ -161,7 +162,7 @@ const HistoryTimeline = () => {
 
             {/* Period indicator */}
             <div className="mt-4 text-center">
-              <span className="text-gray-400 text-sm">
+              <span className="text-gray-600 text-sm">
                 {showModern ? 'Vue moderne' : 'Vue historique'} • {selectedPeriod.period}
               </span>
             </div>

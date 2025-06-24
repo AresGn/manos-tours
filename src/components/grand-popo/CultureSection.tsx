@@ -28,28 +28,28 @@ interface Festival {
 const culturalAspects: CulturalAspect[] = [
   {
     id: 'vodun',
-    title: 'Tradition Vodun',
-    description: 'Le Vodun est une religion ancestrale riche en sagesse et en spiritualité, profondément respectée à Grand-Popo. Cette tradition millénaire unit les communautés dans le respect des ancêtres et de la nature.',
-    image: 'placeholder',
-    respectfulNote: 'Nos visites sont menées avec le plus grand respect, en collaboration avec les guides spirituels locaux.',
+    title: 'Tradition Vodun Authentique',
+    description: 'Grand-Popo compte environ 30 ethnies avec des cultures spécifiques. L\'animisme et le Vodun sont les religions les plus populaires, avec quatre groupes de divinités : Xwla yêhoué, Guins vodoun, Etrons et Zangbétos.',
+    image: '/images/culture/01-23.jpg',
+    respectfulNote: 'Nos visites respectent scrupuleusement les traditions sacrées, guidées par les prêtres et gardiens locaux.',
     experiences: [
-      'Visite respectueuse des temples sacrés',
-      'Rencontre avec les gardiens de la tradition',
-      'Découverte de l\'artisanat rituel',
-      'Participation aux cérémonies ouvertes'
+      'Découverte des temples de Dan et Gou',
+      'Rencontre avec les prêtres traditionnels',
+      'Visite de Hounsoukoè, "la rue des fétiches"',
+      'Participation respectueuse aux cérémonies'
     ]
   },
   {
-    id: 'artisanat',
-    title: 'Artisanat Traditionnel',
-    description: 'L\'artisanat de Grand-Popo reflète des siècles de savoir-faire transmis de génération en génération. Chaque pièce raconte une histoire, chaque motif a sa signification.',
-    image: 'placeholder',
-    respectfulNote: 'Nous soutenons directement les artisans locaux et leurs familles.',
+    id: 'musique',
+    title: 'Rythme Agbadja Popo',
+    description: 'La musique Xwla de Grand-Popo se distingue par le rythme Agbadja d\'origine ghanéenne, transmettant joie, tristesse et amour à travers des instruments traditionnels comme l\'Agbahoun et le Kpessi.',
+    image: '/images/culture/01-26.jpg',
+    respectfulNote: 'Nous collaborons avec les musiciens locaux pour préserver et partager cette richesse culturelle.',
     experiences: [
-      'Ateliers de tissage traditionnel',
-      'Sculpture sur bois avec les maîtres',
-      'Poterie selon les techniques ancestrales',
-      'Création de bijoux symboliques'
+      'Initiation aux rythmes Agbadja',
+      'Rencontre avec les artistes locaux',
+      'Ateliers de percussion traditionnelle',
+      'Spectacles de musique authentique'
     ]
   }
 ];
@@ -57,29 +57,29 @@ const culturalAspects: CulturalAspect[] = [
 const festivals: Festival[] = [
   {
     id: 'voodoo-festival',
-    name: 'Festival Vodun',
+    name: 'Festival Vodun National',
     date: '10 Janvier',
-    description: 'Célébration nationale de la tradition Vodun, reconnue patrimoine mondial.',
-    significance: 'Moment de communion spirituelle et de fierté culturelle',
-    image: 'placeholder',
+    description: 'Célébration nationale de la tradition Vodun au Bénin, reconnue patrimoine mondial par l\'UNESCO.',
+    significance: 'Grand-Popo accueille des milliers de visiteurs pour cette communion spirituelle exceptionnelle',
+    image: '/images/culture/01-24.jpg',
     month: 1
   },
   {
-    id: 'yam-festival',
-    name: 'Fête de l\'Igname',
-    date: 'Août - Septembre',
-    description: 'Célébration des récoltes et remerciements aux divinités de la terre.',
-    significance: 'Gratitude envers la nature et partage communautaire',
-    image: 'placeholder',
+    id: 'nonvitcha-festival',
+    name: 'Fête de Nonvitcha',
+    date: 'Période des récoltes',
+    description: 'Fête populaire traditionnelle célébrant les récoltes et les divinités de la terre.',
+    significance: 'Moment de gratitude envers la nature et de partage communautaire dans la tradition Xwlà',
+    image: '/images/culture/P1103448.jpg',
     month: 8
   },
   {
-    id: 'fishing-festival',
-    name: 'Festival des Pêcheurs',
-    date: 'Mars',
-    description: 'Bénédiction des filets et des pirogues pour une pêche abondante.',
-    significance: 'Harmonie entre l\'homme et l\'océan',
-    image: 'placeholder',
+    id: 'yeke-yeke',
+    name: 'Yêkê-Yêkê',
+    date: 'Calendrier traditionnel',
+    description: 'Fête populaire colorée avec manifestations de Zangbéto dans les villages de Hêvê, Hakoè et Houndjohoundji.',
+    significance: 'Célébration de l\'identité culturelle Xwlà avec danses et rituels ancestraux',
+    image: '/images/culture/P8180542.jpg',
     month: 3
   }
 ];
@@ -93,7 +93,7 @@ const CultureSection = () => {
   const currentMonth = new Date().getMonth() + 1;
 
   return (
-    <section ref={ref} className="py-20 bg-gradient-to-b from-gray-900 to-gray-800 text-white">
+    <section ref={ref} className="py-20 bg-gradient-to-b from-blue-50 to-gray-50 text-gray-900">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -104,15 +104,15 @@ const CultureSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 font-playfair">
             Culture Authentique
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Découvrez la richesse culturelle de Grand-Popo dans le respect 
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            Découvrez la richesse culturelle de Grand-Popo dans le respect
             et l'authenticité, guidé par les gardiens de ces traditions millénaires.
           </p>
         </motion.div>
 
         {/* Cultural Aspects */}
         <div className="mb-20">
-          <h3 className="text-3xl font-bold mb-8 text-center">Traditions Vivantes</h3>
+          <h3 className="text-3xl font-bold mb-8 text-center text-gray-900">Traditions Vivantes</h3>
           
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Aspect Selection */}
@@ -127,15 +127,15 @@ const CultureSection = () => {
                   key={aspect.id}
                   className={`
                     p-6 rounded-xl cursor-pointer transition-all duration-300
-                    ${selectedAspect.id === aspect.id 
-                      ? 'bg-gradient-to-r from-purple-600 to-pink-600 shadow-xl' 
-                      : 'bg-gray-800 hover:bg-gray-700'
+                    ${selectedAspect.id === aspect.id
+                      ? 'bg-gradient-to-r from-purple-600 to-pink-600 shadow-xl text-white'
+                      : 'bg-white hover:bg-gray-50 shadow-md border border-gray-200'
                     }
                   `}
                   onClick={() => setSelectedAspect(aspect)}
                 >
-                  <h4 className="text-2xl font-bold mb-3">{aspect.title}</h4>
-                  <p className="text-gray-300 mb-4">{aspect.description}</p>
+                  <h4 className={`text-2xl font-bold mb-3 ${selectedAspect.id === aspect.id ? 'text-white' : 'text-gray-900'}`}>{aspect.title}</h4>
+                  <p className={`mb-4 ${selectedAspect.id === aspect.id ? 'text-white/90' : 'text-gray-600'}`}>{aspect.description}</p>
                   
                   {selectedAspect.id === aspect.id && (
                     <motion.div
@@ -172,6 +172,7 @@ const CultureSection = () => {
             >
               <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
                 <OptimizedImage
+                  src={selectedAspect.image}
                   className="w-full h-full"
                   alt={selectedAspect.title}
                   fallbackText={selectedAspect.title}
@@ -192,7 +193,7 @@ const CultureSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <h3 className="text-3xl font-bold mb-8 text-center">Calendrier des Festivals</h3>
+          <h3 className="text-3xl font-bold mb-8 text-center text-gray-900">Calendrier des Festivals</h3>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {festivals.map((festival, index) => (
@@ -202,12 +203,13 @@ const CultureSection = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
                 className={`
-                  bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl
+                  bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl border border-gray-200
                   ${festival.month === currentMonth ? 'ring-2 ring-yellow-400' : ''}
                 `}
               >
                 <div className="relative h-48">
                   <OptimizedImage
+                    src={festival.image}
                     className="w-full h-full"
                     alt={festival.name}
                     fallbackText={festival.name}
@@ -225,8 +227,8 @@ const CultureSection = () => {
                     <span className="text-blue-400 font-semibold">{festival.date}</span>
                   </div>
                   
-                  <h4 className="text-xl font-bold mb-3">{festival.name}</h4>
-                  <p className="text-gray-300 text-sm mb-4">{festival.description}</p>
+                  <h4 className="text-xl font-bold mb-3 text-gray-900">{festival.name}</h4>
+                  <p className="text-gray-600 text-sm mb-4">{festival.description}</p>
                   
                   <button
                     onClick={() => setExpandedFestival(
@@ -245,9 +247,9 @@ const CultureSection = () => {
                     <motion.div
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: 'auto' }}
-                      className="mt-4 pt-4 border-t border-gray-700"
+                      className="mt-4 pt-4 border-t border-gray-200"
                     >
-                      <p className="text-sm text-gray-300">{festival.significance}</p>
+                      <p className="text-sm text-gray-600">{festival.significance}</p>
                     </motion.div>
                   )}
                 </div>

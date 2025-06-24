@@ -400,3 +400,6 @@ Ce plan de refonte positionne Manos Tours comme LE référent incontournable pou
 **Le nouveau site ne sera pas juste une vitrine, mais un véritable outil de conversion qui transforme la passion de Manos pour sa région en business florissant.**
 
 *Ready to make Grand-Popo the next must-visit destination in West Africa ? Let's build this digital paradise ! 🏖️✨*
+
+
+Dans le dossier  @c:\Users\ARES GNIMAGNON\Documents\REACT\manos-tours/public\images/  j'ai ajouter de nouveau images  que j'ai bien cléssé par dossier donc ce que tu vas faire c'est de rempalcer les palcehoder et tout les images que tu as mis dans le site qui vinne t de unplash par ces images dans mon dossier @images je parles de surtout ces pages! 

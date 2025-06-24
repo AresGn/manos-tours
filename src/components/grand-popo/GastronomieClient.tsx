@@ -8,37 +8,38 @@ import { ChefHat, Fish, Utensils, Coffee } from 'lucide-react';
 const gastronomyHighlights = [
   {
     icon: <Fish className="w-8 h-8" />,
-    title: "Poissons Frais",
-    description: "Pêche quotidienne de l'océan Atlantique, préparée selon les traditions locales",
+    title: "Fruits de Mer Frais",
+    description: "Poissons, langoustes, gambas, écrevisses et cigales de mer pêchés quotidiennement par les Xwlà et Kéta",
     color: "from-blue-500 to-cyan-400"
   },
   {
     icon: <ChefHat className="w-8 h-8" />,
-    title: "Cuisine Traditionnelle",
-    description: "Recettes ancestrales transmises de génération en génération",
+    title: "Spécialités Béninoises",
+    description: "Dakoin, Gboma, beignets de fromage Peul et tagliatelles aux écrevisses dans un cadre paisible",
     color: "from-orange-500 to-red-400"
   },
   {
     icon: <Utensils className="w-8 h-8" />,
-    title: "Spécialités Locales",
-    description: "Découvrez l'akassa, le gari et autres délices béninois",
+    title: "Transformation Artisanale",
+    description: "Gari, tapioca, huile de palme rouge (Kolè et Zomi) et huile de coco préparés traditionnellement",
     color: "from-green-500 to-emerald-400"
   },
   {
     icon: <Coffee className="w-8 h-8" />,
-    title: "Boissons Artisanales",
-    description: "Sodabi, vin de palme et autres breuvages traditionnels",
+    title: "Sodabi Traditionnel",
+    description: "Boisson locale artisanale et autres breuvages traditionnels du terroir béninois",
     color: "from-purple-500 to-pink-400"
   }
 ];
 
 export default function GastronomieClient() {
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative h-96 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <OptimizedImage
+            src="/images/Gastronomie/Crabe-et-Gari-scaled.jpg"
             className="absolute inset-0 w-full h-full"
             alt="Gastronomie locale de Grand-Popo"
             fallbackText="Gastronomie locale de Grand-Popo"
@@ -57,21 +58,21 @@ export default function GastronomieClient() {
               Gastronomie Locale
             </motion.h1>
             
-            <motion.p 
+            <motion.p
               className="text-xl md:text-2xl font-light leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.3 }}
             >
-              Savourez les délices culinaires authentiques,
-              <span className="text-orange-400"> un voyage des sens</span>
+              Goûtez aux spécialités de la région,
+              <span className="text-orange-400"> produits frais et traditions culinaires</span>
             </motion.p>
           </div>
         </div>
       </section>
 
       {/* Gastronomy Highlights */}
-      <section className="py-20 bg-gray-800">
+      <section className="py-20 bg-gradient-to-br from-orange-50 to-yellow-50">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -79,10 +80,10 @@ export default function GastronomieClient() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-white mb-6 font-playfair">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-playfair">
               Saveurs Authentiques
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               Découvrez la richesse culinaire de Grand-Popo avec Manos
             </p>
           </motion.div>
@@ -118,7 +119,7 @@ export default function GastronomieClient() {
       </section>
 
       {/* Coming Soon Section */}
-      <section className="py-20 bg-gray-900">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-orange-50">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
