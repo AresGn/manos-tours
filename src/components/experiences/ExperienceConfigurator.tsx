@@ -2,10 +2,10 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { 
-  Heart, 
-  Camera, 
-  Waves, 
+import {
+  Heart,
+  Camera,
+  Waves,
   Sparkles,
   Clock,
   Users,
@@ -15,6 +15,7 @@ import {
   ArrowRight,
   CheckCircle
 } from 'lucide-react';
+import BookingSimulator from './BookingSimulator';
 
 interface ConfigurationStep {
   id: string;
@@ -40,6 +41,8 @@ export default function ExperienceConfigurator() {
   const [currentStep, setCurrentStep] = useState(0);
   const [configuration, setConfiguration] = useState<Configuration>({});
   const [showResults, setShowResults] = useState(false);
+  const [selectedExperience, setSelectedExperience] = useState<any>(null);
+  const [showBookingSimulator, setShowBookingSimulator] = useState(false);
 
   const steps: ConfigurationStep[] = [
     {
@@ -240,10 +243,10 @@ export default function ExperienceConfigurator() {
         className="max-w-4xl mx-auto"
       >
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4 font-playfair">
+          <h2 className="text-3xl font-bold text-white mb-4 font-playfair">
             Vos Expériences Personnalisées
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-gray-300">
             Basées sur vos préférences, voici 3 propositions sur-mesure
           </p>
         </div>
@@ -255,30 +258,41 @@ export default function ExperienceConfigurator() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-gray-800/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-600/50"
             >
               <div className="flex items-center gap-2 mb-4">
-                <CheckCircle className="w-6 h-6 text-green-500" />
-                <h3 className="text-xl font-bold text-gray-900">{rec.title}</h3>
+                <CheckCircle className="w-6 h-6 text-green-400" />
+                <h3 className="text-xl font-bold text-white">{rec.title}</h3>
               </div>
-              
-              <p className="text-gray-600 mb-4">{rec.description}</p>
-              
+
+              <p className="text-gray-300 mb-4">{rec.description}</p>
+
               <div className="flex justify-between items-center mb-4">
-                <span className="text-sm text-gray-500">Durée: {rec.duration}</span>
-                <span className="text-lg font-bold text-blue-600">{rec.price}</span>
+                <span className="text-sm text-gray-400">Durée: {rec.duration}</span>
+                <span className="text-lg font-bold text-blue-400">{rec.price}</span>
               </div>
-              
+
               <ul className="space-y-2 mb-6">
                 {rec.highlights.map((highlight, idx) => (
-                  <li key={idx} className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle className="w-4 h-4 text-green-500" />
+                  <li key={idx} className="flex items-center gap-2 text-sm text-gray-300">
+                    <CheckCircle className="w-4 h-4 text-green-400" />
                     {highlight}
                   </li>
                 ))}
               </ul>
               
-              <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-3 rounded-full font-semibold hover:from-blue-700 hover:to-cyan-700 transition-all duration-300">
+              <button
+                onClick={() => {
+                  setSelectedExperience({
+                    id: `custom-${index}`,
+                    title: rec.title,
+                    price: rec.price,
+                    duration: rec.duration
+                  });
+                  setShowBookingSimulator(true);
+                }}
+                className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-3 rounded-full font-semibold hover:from-blue-700 hover:to-cyan-700 transition-all duration-300"
+              >
                 Réserver Cette Expérience
               </button>
             </motion.div>
@@ -288,7 +302,7 @@ export default function ExperienceConfigurator() {
         <div className="text-center">
           <button
             onClick={resetConfigurator}
-            className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-full font-semibold transition-all duration-300"
+            className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg"
           >
             Recommencer la Configuration
           </button>
@@ -304,14 +318,14 @@ export default function ExperienceConfigurator() {
       {/* Progress Bar */}
       <div className="mb-12">
         <div className="flex justify-between items-center mb-4">
-          <span className="text-sm font-semibold text-gray-600">
+          <span className="text-sm font-semibold text-gray-300">
             Étape {currentStep + 1} sur {steps.length}
           </span>
-          <span className="text-sm text-gray-500">
+          <span className="text-sm text-gray-400">
             {Math.round(((currentStep + 1) / steps.length) * 100)}% complété
           </span>
         </div>
-        <div className="w-full bg-gray-200 rounded-full h-2">
+        <div className="w-full bg-gray-700 rounded-full h-2">
           <motion.div
             className="bg-gradient-to-r from-blue-600 to-cyan-600 h-2 rounded-full"
             initial={{ width: 0 }}
@@ -329,10 +343,10 @@ export default function ExperienceConfigurator() {
         transition={{ duration: 0.5 }}
         className="text-center mb-12"
       >
-        <h2 className="text-3xl font-bold text-gray-900 mb-4 font-playfair">
+        <h2 className="text-3xl font-bold text-white mb-4 font-playfair">
           {currentStepData.title}
         </h2>
-        <p className="text-lg text-gray-600">
+        <p className="text-lg text-gray-300">
           {currentStepData.description}
         </p>
       </motion.div>
@@ -346,27 +360,39 @@ export default function ExperienceConfigurator() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             onClick={() => handleOptionSelect(currentStepData.id, option.id)}
-            className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-left"
+            className="group bg-gray-800/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-left border border-gray-600/50 hover:border-blue-400/70 hover:bg-gray-700/90"
           >
             <div className="flex items-start gap-4">
-              <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${option.color} flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${option.color} flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300 shadow-md`}>
                 {option.icon}
               </div>
-              
+
               <div className="flex-1">
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300">
                   {option.label}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-300 group-hover:text-gray-200">
                   {option.description}
                 </p>
               </div>
-              
-              <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" />
+
+              <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-blue-300 group-hover:translate-x-1 transition-all duration-300" />
             </div>
           </motion.button>
         ))}
       </div>
+
+      {/* Booking Simulator */}
+      {selectedExperience && (
+        <BookingSimulator
+          isOpen={showBookingSimulator}
+          onClose={() => {
+            setShowBookingSimulator(false);
+            setSelectedExperience(null);
+          }}
+          experience={selectedExperience}
+        />
+      )}
     </div>
   );
 }

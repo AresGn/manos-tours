@@ -170,7 +170,7 @@ export default function ToursPrivesClient() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #111827 0%, #1f2937 100%)' }}>
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -222,7 +222,7 @@ export default function ToursPrivesClient() {
       </section>
 
       {/* Advantages Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-20" style={{ background: 'linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(31, 41, 55, 0.95) 100%)' }}>
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -230,10 +230,10 @@ export default function ToursPrivesClient() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-playfair">
+            <h2 className="text-4xl font-bold text-white mb-6 font-playfair">
               Pourquoi Choisir Nos Tours ?
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Une expérience unique alliant expertise locale, service premium et authenticité
             </p>
           </motion.div>
@@ -250,10 +250,10 @@ export default function ToursPrivesClient() {
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white">
                   {advantage.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                <h3 className="text-xl font-bold text-white mb-4">
                   {advantage.title}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-300">
                   {advantage.description}
                 </p>
               </motion.div>
@@ -263,7 +263,7 @@ export default function ToursPrivesClient() {
       </section>
 
       {/* Private Tours Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20" style={{ background: 'linear-gradient(135deg, rgba(17, 24, 39, 0.98) 0%, rgba(31, 41, 55, 0.98) 100%)' }}>
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -271,10 +271,10 @@ export default function ToursPrivesClient() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-playfair">
+            <h2 className="text-4xl font-bold text-white mb-6 font-playfair">
               Tours Privés Exclusifs
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Expériences sur-mesure avec guide dédié et service premium
             </p>
           </motion.div>
@@ -354,7 +354,7 @@ export default function ToursPrivesClient() {
       </section>
 
       {/* Group Tours Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-gray-50">
+      <section className="py-20" style={{ background: 'linear-gradient(135deg, #111827 0%, #1f2937 100%)' }}>
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -362,10 +362,10 @@ export default function ToursPrivesClient() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-playfair">
+            <h2 className="text-4xl font-bold text-white mb-6 font-playfair">
               Tours en Groupe
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Partagez l'aventure avec d'autres voyageurs dans une ambiance conviviale
             </p>
           </motion.div>

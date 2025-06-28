@@ -57,7 +57,7 @@ export default function ExperiencesClient() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #111827 0%, #1f2937 100%)' }}>
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -128,17 +128,17 @@ export default function ExperiencesClient() {
       </section>
 
       {/* Interactive Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-20" style={{ background: 'linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(31, 41, 55, 0.95) 100%)' }}>
         <div className="max-w-7xl mx-auto px-4">
           {/* Tab Navigation */}
           <div className="flex justify-center mb-16">
-            <div className="bg-white rounded-full p-2 shadow-lg">
+            <div className="bg-gray-800/90 backdrop-blur-sm rounded-full p-2 shadow-xl border border-gray-600/50">
               <button
                 onClick={() => setActiveTab('configurator')}
                 className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
                   activeTab === 'configurator'
                     ? 'bg-blue-600 text-white shadow-md'
-                    : 'text-gray-600 hover:text-blue-600'
+                    : 'text-gray-300 hover:text-blue-400 hover:bg-gray-700/50'
                 }`}
               >
                 Configurateur
@@ -148,7 +148,7 @@ export default function ExperiencesClient() {
                 className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
                   activeTab === 'signature'
                     ? 'bg-blue-600 text-white shadow-md'
-                    : 'text-gray-600 hover:text-blue-600'
+                    : 'text-gray-300 hover:text-blue-400 hover:bg-gray-700/50'
                 }`}
               >
                 Expériences Signature
@@ -165,7 +165,7 @@ export default function ExperiencesClient() {
       </section>
 
       {/* Experience Categories */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-gray-100">
+      <section className="py-20" style={{ background: 'linear-gradient(135deg, rgba(17, 24, 39, 0.98) 0%, rgba(31, 41, 55, 0.98) 100%)' }}>
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -173,10 +173,10 @@ export default function ExperiencesClient() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-playfair">
+            <h2 className="text-4xl font-bold text-white mb-6 font-playfair">
               Explorez Nos Catégories
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Découvrez toutes nos offres d'expériences organisées par thématiques
             </p>
           </motion.div>
@@ -190,20 +190,20 @@ export default function ExperiencesClient() {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 className="group"
               >
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col">
-                  <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <div className="bg-gray-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col border border-gray-600/50 hover:border-blue-400/60">
+                  <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 text-white shadow-lg`}>
                     {category.icon}
                   </div>
-                  
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+
+                  <h3 className="text-xl font-bold text-white mb-4">
                     {category.title}
                   </h3>
-                  
-                  <p className="text-gray-600 mb-6 flex-grow">
+
+                  <p className="text-gray-300 mb-6 flex-grow">
                     {category.description}
                   </p>
-                  
-                  <button className="flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-300">
+
+                  <button className="flex items-center gap-2 text-blue-400 font-semibold hover:text-blue-300 transition-colors duration-300">
                     Découvrir
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </button>

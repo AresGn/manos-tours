@@ -35,7 +35,7 @@ const natureHighlights = [
 
 export default function PlagesClient() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #111827 0%, #1f2937 100%)' }}>
       {/* Hero Section */}
       <section className="relative h-96 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -73,7 +73,7 @@ export default function PlagesClient() {
       </section>
 
       {/* Nature Highlights */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-gray-50">
+      <section className="py-20" style={{ background: 'linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(31, 41, 55, 0.95) 100%)' }}>
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -81,10 +81,10 @@ export default function PlagesClient() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-playfair">
+            <h2 className="text-4xl font-bold text-white mb-6 font-playfair">
               Trésors Naturels
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Découvrez la richesse écologique exceptionnelle de Grand-Popo
             </p>
           </motion.div>
@@ -123,17 +123,17 @@ export default function PlagesClient() {
       <NatureSlider />
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-20" style={{ background: 'linear-gradient(135deg, rgba(17, 24, 39, 0.98) 0%, rgba(31, 41, 55, 0.98) 100%)' }}>
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-playfair">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-playfair">
               Prêt pour l'Aventure ?
             </h2>
-            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
               Laissez Manos vous guider à travers ces merveilles naturelles
               pour une expérience inoubliable et respectueuse de l'environnement.
             </p>
@@ -141,7 +141,7 @@ export default function PlagesClient() {
               <button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl">
                 Réserver une Excursion Nature
               </button>
-              <button className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300">
+              <button className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300">
                 Voir le Calendrier
               </button>
             </div>

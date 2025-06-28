@@ -34,7 +34,7 @@ const gastronomyHighlights = [
 
 export default function GastronomieClient() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #111827 0%, #1f2937 100%)' }}>
       {/* Hero Section */}
       <section className="relative h-96 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -72,7 +72,7 @@ export default function GastronomieClient() {
       </section>
 
       {/* Gastronomy Highlights */}
-      <section className="py-20 bg-gradient-to-br from-orange-50 to-yellow-50">
+      <section className="py-20" style={{ background: 'linear-gradient(135deg, #111827 0%, #1f2937 100%)' }}>
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -80,10 +80,10 @@ export default function GastronomieClient() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-playfair">
+            <h2 className="text-4xl font-bold text-white mb-6 font-playfair">
               Saveurs Authentiques
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Découvrez la richesse culinaire de Grand-Popo avec Manos
             </p>
           </motion.div>
@@ -119,7 +119,7 @@ export default function GastronomieClient() {
       </section>
 
       {/* Coming Soon Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-orange-50">
+      <section className="py-20" style={{ background: 'linear-gradient(135deg, #111827 0%, #1f2937 100%)' }}>
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

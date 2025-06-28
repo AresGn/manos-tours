@@ -93,7 +93,7 @@ const CultureSection = () => {
   const currentMonth = new Date().getMonth() + 1;
 
   return (
-    <section ref={ref} className="py-20 bg-gradient-to-b from-blue-50 to-gray-50 text-gray-900">
+    <section ref={ref} className="py-20" style={{ background: 'linear-gradient(135deg, #111827 0%, #1f2937 100%)' }}>
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -101,10 +101,10 @@ const CultureSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-playfair">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-playfair text-white">
             Culture Authentique
           </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Découvrez la richesse culturelle de Grand-Popo dans le respect
             et l'authenticité, guidé par les gardiens de ces traditions millénaires.
           </p>
@@ -112,7 +112,7 @@ const CultureSection = () => {
 
         {/* Cultural Aspects */}
         <div className="mb-20">
-          <h3 className="text-3xl font-bold mb-8 text-center text-gray-900">Traditions Vivantes</h3>
+          <h3 className="text-3xl font-bold mb-8 text-center text-white">Traditions Vivantes</h3>
           
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Aspect Selection */}

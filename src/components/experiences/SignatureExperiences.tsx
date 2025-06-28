@@ -2,10 +2,10 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { 
-  Sunrise, 
-  Waves, 
-  Sparkles, 
+import {
+  Sunrise,
+  Waves,
+  Sparkles,
   ChefHat,
   Clock,
   Users,
@@ -17,6 +17,7 @@ import {
   CheckCircle
 } from 'lucide-react';
 import OptimizedImage from '@/components/ui/OptimizedImage';
+import BookingSimulator from './BookingSimulator';
 
 interface SignatureExperience {
   id: string;
@@ -42,6 +43,8 @@ interface SignatureExperience {
 
 export default function SignatureExperiences() {
   const [selectedExperience, setSelectedExperience] = useState<string | null>(null);
+  const [bookingExperience, setBookingExperience] = useState<any>(null);
+  const [showBookingSimulator, setShowBookingSimulator] = useState(false);
 
   const signatureExperiences: SignatureExperience[] = [
     {
@@ -195,8 +198,8 @@ export default function SignatureExperiences() {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 ${
-        isSelected ? 'ring-2 ring-blue-500' : ''
+      className={`bg-gray-800/90 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-600/50 hover:border-blue-400/70 ${
+        isSelected ? 'ring-2 ring-blue-400 shadow-blue-400/30' : ''
       }`}
     >
       <div className="relative h-64">
@@ -219,17 +222,17 @@ export default function SignatureExperiences() {
       </div>
 
       <div className="p-6">
-        <h3 className="text-2xl font-bold text-gray-900 mb-2 font-playfair">
+        <h3 className="text-2xl font-bold text-white mb-2 font-playfair">
           {experience.title}
         </h3>
-        <p className="text-blue-600 font-semibold mb-3">
+        <p className="text-blue-400 font-semibold mb-3">
           {experience.subtitle}
         </p>
-        <p className="text-gray-600 mb-4 line-clamp-3">
+        <p className="text-gray-300 mb-4 line-clamp-3">
           {experience.description}
         </p>
 
-        <div className="flex items-center gap-4 mb-4 text-sm text-gray-500">
+        <div className="flex items-center gap-4 mb-4 text-sm text-gray-400">
           <div className="flex items-center gap-1">
             <Clock className="w-4 h-4" />
             {experience.duration}
@@ -245,19 +248,30 @@ export default function SignatureExperiences() {
         </div>
 
         <div className="flex justify-between items-center mb-4">
-          <span className="text-2xl font-bold text-blue-600">
+          <span className="text-2xl font-bold text-blue-400">
             {experience.price}
           </span>
           <button
             onClick={() => setSelectedExperience(isSelected ? null : experience.id)}
-            className="text-blue-600 hover:text-blue-700 font-semibold flex items-center gap-1"
+            className="text-blue-400 hover:text-blue-300 font-semibold flex items-center gap-1 transition-colors duration-200"
           >
             {isSelected ? 'Voir moins' : 'Voir détails'}
             <ArrowRight className={`w-4 h-4 transition-transform duration-300 ${isSelected ? 'rotate-90' : ''}`} />
           </button>
         </div>
 
-        <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-3 rounded-full font-semibold hover:from-blue-700 hover:to-cyan-700 transition-all duration-300">
+        <button
+          onClick={() => {
+            setBookingExperience({
+              id: experience.id,
+              title: experience.title,
+              price: experience.price,
+              duration: experience.duration
+            });
+            setShowBookingSimulator(true);
+          }}
+          className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-3 rounded-full font-semibold hover:from-blue-700 hover:to-cyan-700 transition-all duration-300"
+        >
           Réserver Maintenant
         </button>
       </div>
@@ -269,18 +283,18 @@ export default function SignatureExperiences() {
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3 }}
-          className="border-t border-gray-200 p-6 bg-gray-50"
+          className="border-t border-gray-600/50 p-6 bg-gray-900/60"
         >
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <h4 className="font-bold text-gray-900 mb-3">Description complète</h4>
-              <p className="text-gray-600 mb-4">{experience.longDescription}</p>
-              
-              <h4 className="font-bold text-gray-900 mb-3">Points forts</h4>
+              <h4 className="font-bold text-white mb-3">Description complète</h4>
+              <p className="text-gray-300 mb-4">{experience.longDescription}</p>
+
+              <h4 className="font-bold text-white mb-3">Points forts</h4>
               <ul className="space-y-2">
                 {experience.highlights.map((highlight, index) => (
-                  <li key={index} className="flex items-center gap-2 text-gray-600">
-                    <CheckCircle className="w-4 h-4 text-green-500" />
+                  <li key={index} className="flex items-center gap-2 text-gray-300">
+                    <CheckCircle className="w-4 h-4 text-green-400" />
                     {highlight}
                   </li>
                 ))}
@@ -288,22 +302,22 @@ export default function SignatureExperiences() {
             </div>
 
             <div>
-              <h4 className="font-bold text-gray-900 mb-3">Inclus dans le prix</h4>
+              <h4 className="font-bold text-white mb-3">Inclus dans le prix</h4>
               <ul className="space-y-2 mb-4">
                 {experience.included.map((item, index) => (
-                  <li key={index} className="flex items-center gap-2 text-gray-600">
-                    <CheckCircle className="w-4 h-4 text-blue-500" />
+                  <li key={index} className="flex items-center gap-2 text-gray-300">
+                    <CheckCircle className="w-4 h-4 text-blue-400" />
                     {item}
                   </li>
                 ))}
               </ul>
 
-              <h4 className="font-bold text-gray-900 mb-3">Programme détaillé</h4>
+              <h4 className="font-bold text-white mb-3">Programme détaillé</h4>
               <div className="space-y-2">
                 {experience.schedule.map((item, index) => (
                   <div key={index} className="flex gap-3">
-                    <span className="text-blue-600 font-semibold text-sm">{item.time}</span>
-                    <span className="text-gray-600 text-sm">{item.activity}</span>
+                    <span className="text-blue-400 font-semibold text-sm">{item.time}</span>
+                    <span className="text-gray-300 text-sm">{item.activity}</span>
                   </div>
                 ))}
               </div>
@@ -322,11 +336,11 @@ export default function SignatureExperiences() {
         transition={{ duration: 0.8 }}
         className="text-center mb-12"
       >
-        <h2 className="text-3xl font-bold text-gray-900 mb-4 font-playfair">
+        <h2 className="text-3xl font-bold text-white mb-4 font-playfair">
           Nos Expériences Signature
         </h2>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          Découvrez nos 4 expériences phares, soigneusement conçues pour vous offrir 
+        <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+          Découvrez nos 4 expériences phares, soigneusement conçues pour vous offrir
           le meilleur de Grand-Popo dans le respect des traditions locales.
         </p>
       </motion.div>
@@ -347,13 +361,25 @@ export default function SignatureExperiences() {
         transition={{ duration: 0.8, delay: 0.5 }}
         className="text-center mt-12"
       >
-        <p className="text-gray-600 mb-6">
+        <p className="text-gray-300 mb-6">
           Toutes nos expériences peuvent être personnalisées selon vos préférences
         </p>
-        <button className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-full font-semibold transition-all duration-300">
+        <button className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg">
           Demander une Personnalisation
         </button>
       </motion.div>
+
+      {/* Booking Simulator */}
+      {bookingExperience && (
+        <BookingSimulator
+          isOpen={showBookingSimulator}
+          onClose={() => {
+            setShowBookingSimulator(false);
+            setBookingExperience(null);
+          }}
+          experience={bookingExperience}
+        />
+      )}
     </div>
   );
 }
