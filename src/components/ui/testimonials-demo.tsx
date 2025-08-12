@@ -1,7 +1,7 @@
-import { PremiumTestimonials } from "@/components/ui/premium-testimonials";
+import { ManosTestimonials } from "@/components/ui/manos-testimonials";
 
 const TestimonialsDemo = () => {
-  return <PremiumTestimonials />;
+  return <ManosTestimonials />;
 };
 
 export { TestimonialsDemo };
