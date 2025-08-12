@@ -1,7 +1,7 @@
 import React from 'react';
 import { HeroSection, ManosGuideSection, FAQSection } from '@/components/sections/home';
 import { Feature108Demo } from '@/components/ui/feature108-demo';
-import { PremiumTestimonials } from '@/components/ui/premium-testimonials';
+import { ManosTestimonials } from '@/components/ui/manos-testimonials';
 import ServicesSection from '@/components/sections/home/ServicesSection';
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
       <ServicesSection />
 
       {/* Section Témoignages */}
-      <PremiumTestimonials />
+      <ManosTestimonials />
 
       {/* Section FAQ */}
       <FAQSection />
