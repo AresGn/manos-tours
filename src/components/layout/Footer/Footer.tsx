@@ -20,10 +20,11 @@ const Footer = () => {
     {
       title: "Expériences",
       links: [
-        { label: "Tours Privés", href: "/experiences" },
-        { label: "Sur-Mesure", href: "/experiences/sur-mesure" },
-        { label: "Écotourisme", href: "/experiences/ecotourisme" },
-        { label: "Packages", href: "/experiences/packages" },
+        { label: "Tous les Circuits", href: "/experiences" },
+        { label: "Nature & Biodiversité", href: "/experiences/nature-biodiversite" },
+        { label: "Culture & Spiritualité", href: "/experiences/culture-spiritualite" },
+        { label: "Artisanat & Traditions", href: "/experiences/artisanat-traditions" },
+        { label: "Histoire & Patrimoine", href: "/experiences/histoire-patrimoine" },
       ]
     },
     {

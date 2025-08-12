@@ -21,11 +21,11 @@ const menu = [
   {
     label: "Expériences",
     children: [
-      { label: "Toutes les Expériences", href: "/experiences" },
-      { label: "Tours Privés & Groupes", href: "/experiences/tours-prives" },
-      { label: "Expériences Sur-Mesure", href: "/experiences/sur-mesure" },
-      { label: "Écotourisme & Éthique", href: "/experiences/ecotourisme" },
-      { label: "Packages Complets", href: "/experiences/packages" },
+      { label: "Tous les Circuits", href: "/experiences" },
+      { label: "Nature & Biodiversité", href: "/experiences/nature-biodiversite" },
+      { label: "Culture & Spiritualité", href: "/experiences/culture-spiritualite" },
+      { label: "Artisanat & Traditions", href: "/experiences/artisanat-traditions" },
+      { label: "Histoire & Patrimoine", href: "/experiences/histoire-patrimoine" },
     ],
   },
   {

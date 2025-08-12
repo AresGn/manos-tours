@@ -9,6 +9,7 @@ interface OptimizedImageProps {
   alt: string;
   width?: number;
   height?: number;
+  fill?: boolean;
   className?: string;
   fallbackText?: string;
   priority?: boolean;
@@ -20,6 +21,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   alt,
   width,
   height,
+  fill,
   className = "",
   fallbackText,
   priority = false,
@@ -57,9 +59,9 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
       <Image
         src={imageSrc}
         alt={alt}
-        fill={!width && !height}
-        width={width}
-        height={height}
+        fill={fill || (!width && !height)}
+        width={!fill ? width : undefined}
+        height={!fill ? height : undefined}
         className={`object-cover transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
         priority={priority}
         quality={quality}
