@@ -121,7 +121,7 @@ const ServicesSection: React.FC = () => {
   return (
     <section
       id="services"
-      className="py-12 md:py-16 lg:py-20 relative overflow-hidden"
+      className="py-10 md:py-12 lg:py-16 relative overflow-hidden"
       style={{
         background: 'linear-gradient(135deg, #111827 0%, #1f2937 100%)'
       }}

@@ -126,7 +126,7 @@ export function PremiumTestimonials() {
   return (
     <section
       id="testimonials"
-      className="relative py-12 md:py-16 lg:py-20 text-white overflow-hidden"
+      className="relative py-8 md:py-10 lg:py-12 text-white overflow-hidden"
       style={{
         background: 'linear-gradient(135deg, #111827 0%, #1f2937 100%)'
       }}
@@ -309,22 +309,22 @@ export function PremiumTestimonials() {
                     <Quote className="w-12 h-12 md:w-16 md:h-16 text-white" />
                   </motion.div>
 
-                  <div className="relative z-10 w-full flex flex-col lg:flex-row items-start gap-6 lg:gap-8">
+                  <div className="relative z-10 w-full flex flex-col lg:flex-row items-start gap-8 lg:gap-10">
                     {/* User Info - Image et infos de base */}
-                    <div className="flex-shrink-0 flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-6 w-full lg:w-auto">
+                    <div className="flex-shrink-0 flex flex-col items-center lg:items-start gap-4 w-full lg:w-auto lg:max-w-xs">
                       {/* Avatar */}
                       <motion.div
                         className="relative"
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden border-4 border-white/20 relative">
+                        <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-full overflow-hidden border-4 border-white/20 relative shadow-2xl">
                           <Image
                             src={testimonials[currentIndex].avatar}
                             alt={testimonials[currentIndex].name}
                             className="w-full h-full object-cover"
-                            width={96}
-                            height={96}
+                            width={112}
+                            height={112}
                           />
                           <motion.div
                             className="absolute inset-0 bg-gradient-to-br from-indigo-400/20 to-rose-400/20"
@@ -345,19 +345,19 @@ export function PremiumTestimonials() {
                       </motion.div>
 
                       {/* Infos utilisateur */}
-                      <div className="text-center lg:text-left">
-                        <h3 className="text-xl lg:text-2xl font-bold text-white mb-1">
+                      <div className="text-center lg:text-left space-y-2">
+                        <h3 className="text-xl lg:text-2xl font-bold text-white leading-tight">
                           {testimonials[currentIndex].name}
                         </h3>
-                        <p className="text-indigo-300 font-medium text-sm lg:text-base mb-1">
+                        <p className="text-indigo-300 font-semibold text-sm lg:text-base">
                           {testimonials[currentIndex].role}
                         </p>
-                        <p className="text-white/60 text-sm lg:text-base mb-3">
+                        <p className="text-white/60 text-sm lg:text-base font-medium">
                           {testimonials[currentIndex].company}
                         </p>
 
                         {/* Star Rating - Mieux alignées */}
-                        <div className="flex justify-center lg:justify-start gap-1">
+                        <div className="flex justify-center lg:justify-start gap-1 pt-2">
                           {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
                             <motion.div
                               key={i}
@@ -365,37 +365,43 @@ export function PremiumTestimonials() {
                               animate={{ opacity: 1, scale: 1 }}
                               transition={{ delay: i * 0.1, duration: 0.3 }}
                             >
-                              <Star className="w-4 h-4 lg:w-5 lg:h-5 fill-yellow-400 text-yellow-400" />
+                              <Star className="w-4 h-4 lg:w-5 lg:h-5 fill-yellow-400 text-yellow-400 drop-shadow-sm" />
                             </motion.div>
                           ))}
                         </div>
                       </div>
                     </div>
 
-                    {/* Content - Témoignage sur la même ligne */}
-                    <div className="flex-1 w-full lg:w-auto flex flex-col justify-start">
+                    {/* Content - Témoignage optimisé */}
+                    <div className="flex-1 w-full lg:w-auto flex flex-col justify-center space-y-6">
                       <motion.blockquote
-                        className="text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed mb-4 lg:mb-6 font-light italic"
+                        className="text-lg md:text-xl lg:text-2xl text-white/95 leading-relaxed font-light italic relative"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.3, duration: 0.8 }}
                       >
-                        &ldquo;{testimonials[currentIndex].text}&rdquo;
+                        <span className="text-indigo-300 text-3xl lg:text-4xl absolute -top-2 -left-2 lg:-left-4 font-serif">&ldquo;</span>
+                        <span className="relative z-10 pl-4 lg:pl-6">{testimonials[currentIndex].text}</span>
+                        <span className="text-indigo-300 text-3xl lg:text-4xl absolute -bottom-4 -right-2 font-serif">&rdquo;</span>
                       </motion.blockquote>
 
-                      {/* Results - Disposées horizontalement */}
-                      <div className="flex flex-wrap gap-2 lg:gap-3 justify-start">
+                      {/* Results - Disposées avec plus d'espace */}
+                      <div className="flex flex-wrap gap-3 lg:gap-4 justify-start">
                         {testimonials[currentIndex].results.map((result, i) => (
                           <motion.div
                             key={i}
-                            className="bg-white/[0.05] rounded-full px-3 py-2 border border-white/[0.1] backdrop-blur-sm flex-shrink-0"
+                            className="bg-gradient-to-r from-white/[0.08] to-white/[0.05] rounded-full px-4 py-2.5 border border-white/[0.15] backdrop-blur-sm flex-shrink-0 shadow-lg"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.5 + i * 0.1, duration: 0.5 }}
-                            whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.1)" }}
+                            whileHover={{
+                              backgroundColor: "rgba(255, 255, 255, 0.12)",
+                              scale: 1.05,
+                              borderColor: "rgba(255, 255, 255, 0.25)"
+                            }}
                           >
-                            <span className="text-xs lg:text-sm text-white/70 font-medium whitespace-nowrap">
-                              {result}
+                            <span className="text-sm lg:text-base text-white/80 font-medium whitespace-nowrap">
+                              ✓ {result}
                             </span>
                           </motion.div>
                         ))}
@@ -408,18 +414,22 @@ export function PremiumTestimonials() {
           </div>
 
           {/* Navigation Controls */}
-          <div className="flex justify-center items-center gap-6 mt-8">
+          <div className="flex justify-center items-center gap-8 mt-12">
             <motion.button
               onClick={prevTestimonial}
-              className="p-3 rounded-full bg-white/[0.08] border border-white/[0.15] backdrop-blur-sm text-white hover:bg-white/[0.15] transition-all"
-              whileHover={{ scale: 1.1, backgroundColor: "rgba(255, 255, 255, 0.15)" }}
+              className="group p-4 rounded-full bg-gradient-to-r from-white/[0.08] to-white/[0.05] border border-white/[0.15] backdrop-blur-sm text-white hover:bg-white/[0.15] transition-all shadow-lg"
+              whileHover={{
+                scale: 1.1,
+                backgroundColor: "rgba(255, 255, 255, 0.15)",
+                borderColor: "rgba(255, 255, 255, 0.25)"
+              }}
               whileTap={{ scale: 0.95 }}
             >
-              <ArrowLeft className="w-5 h-5" />
+              <ArrowLeft className="w-5 h-5 group-hover:text-indigo-300 transition-colors" />
             </motion.button>
 
             {/* Dots Indicator */}
-            <div className="flex gap-3">
+            <div className="flex gap-4">
               {testimonials.map((_, index) => (
                 <motion.button
                   key={index}
@@ -427,24 +437,36 @@ export function PremiumTestimonials() {
                     setDirection(index > currentIndex ? 1 : -1);
                     setCurrentIndex(index);
                   }}
-                  className={`w-3 h-3 rounded-full transition-all ${
+                  className={`relative transition-all duration-300 ${
                     index === currentIndex
-                      ? 'bg-indigo-400 scale-125'
-                      : 'bg-white/30 hover:bg-white/50'
+                      ? 'w-8 h-3 bg-gradient-to-r from-indigo-400 to-blue-400 rounded-full shadow-lg'
+                      : 'w-3 h-3 bg-white/30 hover:bg-white/50 rounded-full'
                   }`}
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
-                />
+                >
+                  {index === currentIndex && (
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-indigo-400 to-blue-400 rounded-full"
+                      layoutId="activeIndicator"
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    />
+                  )}
+                </motion.button>
               ))}
             </div>
 
             <motion.button
               onClick={nextTestimonial}
-              className="p-3 rounded-full bg-white/[0.08] border border-white/[0.15] backdrop-blur-sm text-white hover:bg-white/[0.15] transition-all"
-              whileHover={{ scale: 1.1, backgroundColor: "rgba(255, 255, 255, 0.15)" }}
+              className="group p-4 rounded-full bg-gradient-to-r from-white/[0.08] to-white/[0.05] border border-white/[0.15] backdrop-blur-sm text-white hover:bg-white/[0.15] transition-all shadow-lg"
+              whileHover={{
+                scale: 1.1,
+                backgroundColor: "rgba(255, 255, 255, 0.15)",
+                borderColor: "rgba(255, 255, 255, 0.25)"
+              }}
               whileTap={{ scale: 0.95 }}
             >
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-5 h-5 group-hover:text-indigo-300 transition-colors" />
             </motion.button>
           </div>
         </div>
