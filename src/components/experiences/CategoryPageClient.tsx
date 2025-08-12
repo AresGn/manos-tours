@@ -205,7 +205,7 @@ export default function CategoryPageClient({ category }: CategoryPageClientProps
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as 'prix' | 'duree' | 'nom')}
-                  className="px-4 py-3 bg-white rounded-xl border-0 focus:ring-2 focus:ring-blue-500 text-gray-900 min-w-[200px]"
+                  className="px-4 py-3 bg-blue-800 rounded-xl border border-blue-600 focus:ring-2 focus:ring-blue-400 text-white min-w-[200px]"
                 >
                   <option value="nom">Trier par nom</option>
                   <option value="prix">Trier par prix</option>
@@ -252,13 +252,13 @@ export default function CategoryPageClient({ category }: CategoryPageClientProps
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 inline-block"
+                className="bg-gradient-to-r from-orange-600 to-red-600 text-white hover:from-orange-700 hover:to-red-700 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 inline-block"
               >
                 Réserver Maintenant
               </Link>
               <Link
                 href="/experiences"
-                className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 inline-block"
+                className="border-2 border-blue-400 text-blue-400 hover:bg-blue-800/50 hover:text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 inline-block"
               >
                 Voir Tous les Circuits
               </Link>

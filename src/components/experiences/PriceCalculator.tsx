@@ -90,7 +90,7 @@ export default function PriceCalculator({
       </div>
 
       {/* Détails du calcul */}
-      <div className="border-t pt-4 mb-6">
+      <div className="border-t border-blue-700/50 pt-4 mb-6">
         <div className="space-y-2 text-sm">
           {prixCalcule.detailsCalcul.map((detail, index) => (
             <div key={index} className="flex justify-between">
@@ -120,14 +120,14 @@ export default function PriceCalculator({
         {onBookingClick ? (
           <button
             onClick={() => onBookingClick(nombreAdultes, nombreEnfants)}
-            className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-3 px-4 rounded-lg font-semibold hover:from-blue-700 hover:to-cyan-700 transition-all duration-300"
+            className="w-full bg-gradient-to-r from-orange-600 to-red-600 text-white py-3 px-4 rounded-lg font-semibold hover:from-orange-700 hover:to-red-700 transition-all duration-300"
           >
             Réserver Maintenant
           </button>
         ) : (
           <Link
             href={`/contact?circuit=${circuit.slug}&adultes=${nombreAdultes}&enfants=${nombreEnfants}`}
-            className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-3 px-4 rounded-lg font-semibold hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 text-center block"
+            className="w-full bg-gradient-to-r from-orange-600 to-red-600 text-white py-3 px-4 rounded-lg font-semibold hover:from-orange-700 hover:to-red-700 transition-all duration-300 text-center block"
           >
             Réserver Maintenant
           </Link>
@@ -135,7 +135,7 @@ export default function PriceCalculator({
         
         <Link
           href={`/contact?circuit=${circuit.slug}&info=true`}
-          className="w-full border-2 border-blue-600 text-blue-600 py-3 px-4 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-300 text-center block"
+          className="w-full border-2 border-blue-400 text-blue-400 py-3 px-4 rounded-lg font-semibold hover:bg-blue-800/50 transition-all duration-300 text-center block"
         >
           Demander des Infos
         </Link>

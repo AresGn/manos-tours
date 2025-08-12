@@ -176,7 +176,7 @@ export default function ExperiencesClient() {
                     className={`px-4 py-2 rounded-full transition-all duration-300 ${
                       filters.categories?.includes(key as CircuitCategory)
                         ? `bg-gradient-to-r ${category.color} text-white`
-                        : 'bg-white/20 text-white hover:bg-white/30'
+                        : 'bg-blue-800/30 text-white hover:bg-blue-700/50'
                     }`}
                   >
                     {category.icon} {category.nom}
@@ -290,7 +290,7 @@ export default function ExperiencesClient() {
                   className="group"
                 >
                   <Link href={`/experiences/${key}`}>
-                    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col border border-white/20 hover:border-blue-400/60 cursor-pointer">
+                    <div className="bg-blue-800/20 backdrop-blur-md rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col border border-blue-600/30 hover:border-blue-400/60 cursor-pointer">
                       <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 text-white shadow-lg text-2xl`}>
                         {category.icon}
                       </div>
@@ -335,13 +335,13 @@ export default function ExperiencesClient() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 inline-block"
+                className="bg-gradient-to-r from-orange-600 to-red-600 text-white hover:from-orange-700 hover:to-red-700 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 inline-block"
               >
                 Réserver Maintenant
               </Link>
               <Link
                 href="/contact"
-                className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 inline-block"
+                className="border-2 border-blue-400 text-blue-400 hover:bg-blue-800/50 hover:text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 inline-block"
               >
                 Demander des Infos
               </Link>

@@ -39,19 +39,19 @@ function PriceCalculator({ circuit, onOpenBooking }: { circuit: Circuit; onOpenB
   });
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-6 sticky top-24">
-      <h3 className="text-xl font-bold text-gray-900 mb-4">Calculer le prix</h3>
+    <div className="bg-blue-900/90 backdrop-blur-sm rounded-xl shadow-lg p-6 sticky top-24 border border-blue-700/50">
+      <h3 className="text-xl font-bold text-white mb-4">Calculer le prix</h3>
       
       {/* Sélecteurs */}
       <div className="space-y-4 mb-6">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-gray-300 mb-2">
             Nombre d'adultes
           </label>
           <select
             value={nombreAdultes}
             onChange={(e) => setNombreAdultes(Number(e.target.value))}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="w-full px-3 py-2 border border-blue-600 bg-blue-800 text-white rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
           >
             {[...Array(10)].map((_, i) => (
               <option key={i} value={i + 1}>{i + 1} adulte{i > 0 ? 's' : ''}</option>
@@ -61,13 +61,13 @@ function PriceCalculator({ circuit, onOpenBooking }: { circuit: Circuit; onOpenB
 
         {circuit.ageMinimum && (
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-gray-300 mb-2">
               Nombre d'enfants (≥ {circuit.ageMinimum} ans)
             </label>
             <select
               value={nombreEnfants}
               onChange={(e) => setNombreEnfants(Number(e.target.value))}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-blue-600 bg-blue-800 text-white rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
             >
               {[...Array(6)].map((_, i) => (
                 <option key={i} value={i}>{i} enfant{i > 1 ? 's' : ''}</option>
@@ -89,7 +89,7 @@ function PriceCalculator({ circuit, onOpenBooking }: { circuit: Circuit; onOpenB
         </div>
         <div className="border-t mt-4 pt-4">
           <div className="flex justify-between items-center">
-            <span className="text-lg font-bold text-gray-900">Total:</span>
+            <span className="text-lg font-bold text-white">Total:</span>
             <span className="text-2xl font-bold text-blue-600">
               {prixCalcule.montantTotal.toLocaleString()} F CFA
             </span>
@@ -151,7 +151,7 @@ export default function CircuitDetailClient({ circuit }: CircuitDetailClientProp
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #111827 0%, #1f2937 100%)' }}>
       {/* Section Hero */}
       <section className="relative h-96 overflow-hidden">
         <OptimizedImage
@@ -362,10 +362,10 @@ export default function CircuitDetailClient({ circuit }: CircuitDetailClientProp
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4 font-playfair">
+            <h2 className="text-3xl font-bold text-white mb-4 font-playfair">
               Circuits similaires
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-300 max-w-2xl mx-auto">
               Découvrez d'autres expériences qui pourraient vous intéresser
             </p>
           </motion.div>

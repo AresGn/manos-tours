@@ -365,7 +365,7 @@ export default function BookingModal({
                 <div className="flex justify-between">
                   <button
                     onClick={() => setStep(1)}
-                    className="border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-300"
+                    className="border-2 border-blue-400 text-blue-400 px-6 py-3 rounded-lg font-semibold hover:bg-blue-800/50 transition-all duration-300"
                   >
                     Retour
                   </button>
@@ -432,9 +432,9 @@ export default function BookingModal({
                   </div>
                 </div>
 
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                  <p className="text-sm text-blue-800">
-                    <strong>Note:</strong> Cette réservation sera confirmée par Manos dans les 24h. 
+                <div className="bg-blue-600/20 border border-blue-500/50 rounded-lg p-4">
+                  <p className="text-sm text-blue-200">
+                    <strong>Note:</strong> Cette réservation sera confirmée par Manos dans les 24h.
                     Vous recevrez un email de confirmation avec les détails de paiement.
                   </p>
                 </div>
@@ -442,7 +442,7 @@ export default function BookingModal({
                 <div className="flex justify-between">
                   <button
                     onClick={() => setStep(2)}
-                    className="border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-300"
+                    className="border-2 border-blue-400 text-blue-400 px-6 py-3 rounded-lg font-semibold hover:bg-blue-800/50 transition-all duration-300"
                   >
                     Retour
                   </button>
